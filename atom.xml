@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[Wade Deng's Blog]]></title>
+  
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/"/>
+  <updated>2015-10-26T13:57:54.012Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name><![CDATA[Wade Deng]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <link href="http://yoursite.com/2015/10/26/hello-world/"/>
+    <id>http://yoursite.com/2015/10/26/hello-world/</id>
+    <published>2015-10-26T13:57:54.012Z</published>
+    <updated>2015-10-26T13:57:54.012Z</updated>
+    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[MMS key index]]></title>
+    <link href="http://yoursite.com/2015/10/15/mms-key-index/"/>
+    <id>http://yoursite.com/2015/10/15/mms-key-index/</id>
+    <published>2015-10-15T13:30:26.000Z</published>
+    <updated>2015-10-26T13:57:54.012Z</updated>
+    <content type="html"><![CDATA[<h1 id="MMS关键指标意义&amp;各数值区间意义&amp;部署">MMS关键指标意义&amp;各数值区间意义&amp;部署</h1><h2 id="##part_1_mms图">##part 1 mms图</h2><h3 id="What’s_MMS">What’s MMS</h3><p>MongoDB Management Service (MMS) is a suite of services for managing MongoDB deployments.</p>
+<h3 id="统计图表的数据来源">统计图表的数据来源</h3><p>all statistics can show in mongo shell by:</p>
+<pre><code>&gt;db.<span class="function"><span class="title">serverStatus</span><span class="params">()</span></span>
+</code></pre><p>### </p>
+<ol>
+<li>opcounters<br>意义：The average number of commands performed per second since the last data point<br>代表忙不忙，越小越好。（看业务）<br><img src="http://7xk67t.com1.z0.glb.clouddn.com/mms-opcounters.png" alt="opcounters"></li>
+<li>queue</li>
+</ol>
+<p>意义：The number of operations queued waiting for any lock －－ 排队未执行的命令<br>越小越好，平时&lt;1<br><img src="http://7xk67t.com1.z0.glb.clouddn.com/mms-queues.png" alt="此处输入图片的描述"></p>
+<ol>
+<li>connection</li>
+</ol>
+<p>意义：The number of currently active connections to this server. A stack is allocated per connection; thus very many connections can result in significant RAM usage.<br>越小越好。<br>=client (connected) * 集群server 数目<br><img src="http://7xk67t.com1.z0.glb.clouddn.com/mms-connections.png" alt="此处输入图片的描述"></p>
+<ol>
+<li>lock</li>
+</ol>
+<p>意义：The percent of time write locked. The effective lock % is the percent of time in the global lock plus the percent of time locked by the hottest database. Because the data is sampled and combined, it is possible to see values over 100%.<br>越小越好。<br>造成锁增加的行为：update delete insert …<br><img src="http://7xk67t.com1.z0.glb.clouddn.com/mms-lock.png" alt="此处输入图片的描述"></p>
+<ol>
+<li>Btree</li>
+</ol>
+<p>意义：A large number of misses means that you are indexes are too big to fit in RAM, which can cause a significant performance penalty －－ 因为数据不再mem,从disk 加载到mem。<br>mongodb 使用 btree index<br>missratio ＝ misses/access 最好是0<br>access:  The number of times the btree indexes have been accessed.<br>hits:The number of times a btree page was in memory<br>misses: The number of times a btree page was not in memory<br>注意：不要只看一条线<br><img src="http://7xk67t.com1.z0.glb.clouddn.com/mms-btree.png" alt="此处输入图片的描述"></p>
+<ol>
+<li>Asserts</li>
+</ol>
+<p>意义：The number of regular asserts raised since this process started<br>“asserts” : {<br>        “regular” : <num>,<br>        “warning” : <num>,<br>        “msg” : <num>,<br>        “user” : <num>,<br>        “rollovers” : <num><br>},<br>不要只看一条线<br><img src="http://7xk67t.com1.z0.glb.clouddn.com/mms-asserts.png" alt="此处输入图片的描述"></num></num></num></num></num></p>
+<ol>
+<li>Page faults</li>
+</ol>
+<p>意义：The number of page faults on this process. In non-Windows environments this is hard page faults only.<br>越小越好。<br><img src="http://7xk67t.com1.z0.glb.clouddn.com/mms-pageFaults.png" alt="此处输入图片的描述"><br>  ref:<a href="http://www.cnblogs.com/no7dw/archive/2013/02/20/2918372.html" target="_blank" rel="external">link</a></p>
+<h2 id="PART_2_mms-monitoring-agent_and_mms-backup-agent">PART 2 mms-monitoring-agent and mms-backup-agent</h2><p>monitoring agent: 主要用于监控db 状态</p>
+<p>backup agent 主要用于备份db 到云端</p>
+<p>monitoring:<br>安装：<br><a href="https://docs.cloud.mongodb.com/tutorial/install-monitoring-agent-with-deb-package/" target="_blank" rel="external">https://docs.cloud.mongodb.com/tutorial/install-monitoring-agent-with-deb-package/</a></p>
+<p>如何开启／关闭</p>
+<pre><code>sudo <span class="operator"><span class="keyword">start</span> mongodb-mms-<span class="keyword">monitoring</span>-<span class="keyword">agent</span>
+sudo <span class="keyword">stop</span> mongodb-mms-<span class="keyword">monitoring</span>-<span class="keyword">agent</span> 
+https://docs.cloud.mongodb.com/tutorial/<span class="keyword">start</span>-<span class="keyword">or</span>-<span class="keyword">stop</span>-<span class="keyword">monitoring</span>-<span class="keyword">agent</span>/</span>
+</code></pre><p>backup :<br><a href="https://docs.cloud.mongodb.com/tutorial/install-backup-agent-with-deb-package/" target="_blank" rel="external">https://docs.cloud.mongodb.com/tutorial/install-backup-agent-with-deb-package/</a><br>how to start &amp; stop</p>
+<pre><code>sudo <span class="operator"><span class="keyword">start</span> mongodb-mms-<span class="keyword">backup</span>-<span class="keyword">agent</span></span>
+</code></pre><p>  或者：</p>
+<pre><code>sudo nohup ./mongodb-mms-<span class="operator"><span class="keyword">backup</span>-<span class="keyword">agent</span> &gt;&gt; <span class="keyword">backup</span>-<span class="keyword">agent</span>.<span class="keyword">log</span> <span class="number">2</span>&gt;&amp;<span class="number">1</span> &amp;</span>
+</code></pre><p>注意权限</p>
+<p><a href="https://docs.cloud.mongodb.com/tutorial/start-or-stop-backup-agent/" target="_blank" rel="external">https://docs.cloud.mongodb.com/tutorial/start-or-stop-backup-agent/</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="MMS关键指标意义&amp;各数值区间意义&amp;部署">MMS关键指标意义&amp;各数值区间意义&amp;部署</h1><h2 id="##part_1_mms图">##part 1 mms图</h2><h3 id="What’s_MMS">What’s M]]>
+    </summary>
+    
+  </entry>
+  
+</feed>
