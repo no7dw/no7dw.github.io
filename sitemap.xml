@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2015/10/27/webstorm_mocha/</loc>
+    <lastmod>2015-10-27T08:58:45.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2015/10/27/replicate_error/</loc>
-    <lastmod>2015-10-27T04:41:35.000Z</lastmod>
+    <lastmod>2015-10-27T05:10:41.000Z</lastmod>
   </url>
   
   <url>

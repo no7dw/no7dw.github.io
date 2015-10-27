@@ -61,10 +61,73 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-webstorm_mocha" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/10/27/webstorm_mocha/" class="article-date">
+  <time datetime="2015-10-27T08:58:45.000Z" itemprop="datePublished">2015-10-27</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/27/webstorm_mocha/">使用webstorm 配置文件配置mocha</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Webstorm 的运行配置文件。<br>Mocha_Coverage.xml  使用 Mocha 运行测试。</p>
+<pre><code><span class="tag">&lt;<span class="title">component</span> <span class="attribute">name</span>=<span class="value">"ProjectRunConfigurationManager"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">configuration</span> <span class="attribute">default</span>=<span class="value">"false"</span> <span class="attribute">name</span>=<span class="value">"Mocha Coverage"</span> <span class="attribute">type</span>=<span class="value">"mocha-javascript-test-runner"</span> <span class="attribute">factoryName</span>=<span class="value">"Mocha"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">node-options</span> /&gt;</span>
+    <span class="tag">&lt;<span class="title">working-directory</span>&gt;</span>$PROJECT_DIR$<span class="tag">&lt;/<span class="title">working-directory</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">pass-parent-env</span>&gt;</span>true<span class="tag">&lt;/<span class="title">pass-parent-env</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">envs</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">env</span> <span class="attribute">name</span>=<span class="value">"REDIS_HOST"</span> <span class="attribute">value</span>=<span class="value">"koala"</span> /&gt;</span>
+      <span class="tag">&lt;<span class="title">env</span> <span class="attribute">name</span>=<span class="value">"PORT"</span> <span class="attribute">value</span>=<span class="value">"8012"</span> /&gt;</span>
+      <span class="tag">&lt;<span class="title">env</span> <span class="attribute">name</span>=<span class="value">"TOKEN_SECRET"</span> <span class="attribute">value</span>=<span class="value">"koala"</span> /&gt;</span>
+      <span class="tag">&lt;<span class="title">env</span> <span class="attribute">name</span>=<span class="value">"RUN_UNITTEST"</span> <span class="attribute">value</span>=<span class="value">"TEST"</span> /&gt;</span>
+      <span class="tag">&lt;<span class="title">env</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">value</span>=<span class="value">""</span> /&gt;</span>
+    <span class="tag">&lt;/<span class="title">envs</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">ui</span>&gt;</span>bdd<span class="tag">&lt;/<span class="title">ui</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">extra-mocha-options</span> /&gt;</span>
+    <span class="tag">&lt;<span class="title">test-directory</span>&gt;</span>$PROJECT_DIR$/test/<span class="tag">&lt;/<span class="title">test-directory</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">recursive</span>&gt;</span>true<span class="tag">&lt;/<span class="title">recursive</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">method</span> /&gt;</span>
+  <span class="tag">&lt;/<span class="title">configuration</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">component</span>&gt;</span>
+</code></pre><p>config.sh</p>
+<pre><code><span class="shebang">#!/bin/bash</span>
+<span class="built_in">echo</span> <span class="string">'mkdir $PROJECT_DIR$/.idea/runConfigurations'</span>
+mkdir -p ../../.idea/runConfigurations
+
+<span class="built_in">echo</span> <span class="string">'copy files to  $PROJECT_DIR$/.idea/runConfigurations'</span>
+cp Mocha_Coverage.xml ../../.idea/runConfigurations/
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/10/27/webstorm_mocha/" data-id="cig955tlq000038fyvrtnn21i" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-replicate_error" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/10/27/replicate_error/" class="article-date">
-  <time datetime="2015-10-27T04:41:35.000Z" itemprop="datePublished">2015-10-27</time>
+  <time datetime="2015-10-27T05:10:41.000Z" itemprop="datePublished">2015-10-27</time>
 </a>
     
   </div>
@@ -90,7 +153,7 @@
 </ol>
 <p>第二步 找不到。报错。</p>
 <p>原因。读写分离后，写 master 后，同步到replicate 需要时间。<br>这时候访问（读）replicate ，会有数据不一致的问题。</p>
-<p>&lt;2.6 版本的mongodb ，可以通过getLasterError的mongodb command ， j 选项，来确保数据写道磁盘中。<br>对于2.6 + 以上mongodb;<br>mongodb 有write-concert 选项。我们用的sailsjs 框架，默认也是｛w:1｝。带write concert 。 但值得注意的时，write-concert 时确保数据写道磁盘中。<br>但对一个 复制集的 部署架构，要确保数据也同时同步到复制集中。{w:number},number 要是复制集的数目。<br>1 只代表写到 standalone的 hosts ，活着 复制集架构的的master。</p>
+<p>&lt;2.6 版本的mongodb ，可以通过getLasterError的mongodb command ， j 选项，来确保数据写道磁盘中。<br>对于2.6 + 以上mongodb;<br>mongodb 有write-concert 选项。我们用的sailsjs 框架，默认也是｛w:1｝。带write concert 。 但值得注意的时，write-concert 时确保数据写道磁盘中。<br>但对一个 复制集的 部署架构，要确保数据也同时同步到复制集中。{w:number},number 要是复制集的数目。<br>1 只代表写到 standalone的 hosts ，或者 复制集架构的的master。</p>
 <p>注意：<br>如果对数据一致性要求不高，可以使用读写分离。<br>如果对数据一致性要求高，要慎重开启读写分离，或者配置写操作的option {w:$number}。</p>
 
       
@@ -331,7 +394,7 @@ https://docs.cloud.mongodb.com/tutorial/<span class="keyword">start</span>-<span
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">4</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">5</span></li></ul>
     </div>
   </div>
 
@@ -341,6 +404,10 @@ https://docs.cloud.mongodb.com/tutorial/<span class="keyword">start</span>-<span
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/10/27/webstorm_mocha/">使用webstorm 配置文件配置mocha</a>
+          </li>
         
           <li>
             <a href="/2015/10/27/replicate_error/">读写分离后的并发问题</a>

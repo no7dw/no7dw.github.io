@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-10-27T04:41:35.000Z</updated>
+  <updated>2015-10-27T08:58:45.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,11 +15,52 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[使用webstorm 配置文件配置mocha]]></title>
+    <link href="http://yoursite.com/2015/10/27/webstorm_mocha/"/>
+    <id>http://yoursite.com/2015/10/27/webstorm_mocha/</id>
+    <published>2015-10-27T08:58:45.000Z</published>
+    <updated>2015-10-27T08:58:45.000Z</updated>
+    <content type="html"><![CDATA[<p>Webstorm 的运行配置文件。<br>Mocha_Coverage.xml  使用 Mocha 运行测试。</p>
+<pre><code><span class="tag">&lt;<span class="title">component</span> <span class="attribute">name</span>=<span class="value">"ProjectRunConfigurationManager"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">configuration</span> <span class="attribute">default</span>=<span class="value">"false"</span> <span class="attribute">name</span>=<span class="value">"Mocha Coverage"</span> <span class="attribute">type</span>=<span class="value">"mocha-javascript-test-runner"</span> <span class="attribute">factoryName</span>=<span class="value">"Mocha"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">node-options</span> /&gt;</span>
+    <span class="tag">&lt;<span class="title">working-directory</span>&gt;</span>$PROJECT_DIR$<span class="tag">&lt;/<span class="title">working-directory</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">pass-parent-env</span>&gt;</span>true<span class="tag">&lt;/<span class="title">pass-parent-env</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">envs</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">env</span> <span class="attribute">name</span>=<span class="value">"REDIS_HOST"</span> <span class="attribute">value</span>=<span class="value">"koala"</span> /&gt;</span>
+      <span class="tag">&lt;<span class="title">env</span> <span class="attribute">name</span>=<span class="value">"PORT"</span> <span class="attribute">value</span>=<span class="value">"8012"</span> /&gt;</span>
+      <span class="tag">&lt;<span class="title">env</span> <span class="attribute">name</span>=<span class="value">"TOKEN_SECRET"</span> <span class="attribute">value</span>=<span class="value">"koala"</span> /&gt;</span>
+      <span class="tag">&lt;<span class="title">env</span> <span class="attribute">name</span>=<span class="value">"RUN_UNITTEST"</span> <span class="attribute">value</span>=<span class="value">"TEST"</span> /&gt;</span>
+      <span class="tag">&lt;<span class="title">env</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">value</span>=<span class="value">""</span> /&gt;</span>
+    <span class="tag">&lt;/<span class="title">envs</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">ui</span>&gt;</span>bdd<span class="tag">&lt;/<span class="title">ui</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">extra-mocha-options</span> /&gt;</span>
+    <span class="tag">&lt;<span class="title">test-directory</span>&gt;</span>$PROJECT_DIR$/test/<span class="tag">&lt;/<span class="title">test-directory</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">recursive</span>&gt;</span>true<span class="tag">&lt;/<span class="title">recursive</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">method</span> /&gt;</span>
+  <span class="tag">&lt;/<span class="title">configuration</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">component</span>&gt;</span>
+</code></pre><p>config.sh</p>
+<pre><code><span class="shebang">#!/bin/bash</span>
+<span class="built_in">echo</span> <span class="string">'mkdir $PROJECT_DIR$/.idea/runConfigurations'</span>
+mkdir -p ../../.idea/runConfigurations
+
+<span class="built_in">echo</span> <span class="string">'copy files to  $PROJECT_DIR$/.idea/runConfigurations'</span>
+cp Mocha_Coverage.xml ../../.idea/runConfigurations/
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p>Webstorm 的运行配置文件。<br>Mocha_Coverage.xml  使用 Mocha 运行测试。</p>
+<pre><code><span class="tag">&lt;<span class="title">component</span> <span c]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[读写分离后的并发问题]]></title>
     <link href="http://yoursite.com/2015/10/27/replicate_error/"/>
     <id>http://yoursite.com/2015/10/27/replicate_error/</id>
-    <published>2015-10-27T04:41:35.000Z</published>
-    <updated>2015-10-27T04:41:35.000Z</updated>
+    <published>2015-10-27T05:10:41.000Z</published>
+    <updated>2015-10-27T05:10:41.000Z</updated>
     <content type="html"><![CDATA[<p>因为服务器最近压力稍大，想做读写分离，以减少主服务器的压力，将读转移到replicate sets 中。<br>但代码执行时：</p>
 <ol>
 <li>create order record</li>
@@ -27,7 +68,7 @@
 </ol>
 <p>第二步 找不到。报错。</p>
 <p>原因。读写分离后，写 master 后，同步到replicate 需要时间。<br>这时候访问（读）replicate ，会有数据不一致的问题。</p>
-<p>&lt;2.6 版本的mongodb ，可以通过getLasterError的mongodb command ， j 选项，来确保数据写道磁盘中。<br>对于2.6 + 以上mongodb;<br>mongodb 有write-concert 选项。我们用的sailsjs 框架，默认也是｛w:1｝。带write concert 。 但值得注意的时，write-concert 时确保数据写道磁盘中。<br>但对一个 复制集的 部署架构，要确保数据也同时同步到复制集中。{w:number},number 要是复制集的数目。<br>1 只代表写到 standalone的 hosts ，活着 复制集架构的的master。</p>
+<p>&lt;2.6 版本的mongodb ，可以通过getLasterError的mongodb command ， j 选项，来确保数据写道磁盘中。<br>对于2.6 + 以上mongodb;<br>mongodb 有write-concert 选项。我们用的sailsjs 框架，默认也是｛w:1｝。带write concert 。 但值得注意的时，write-concert 时确保数据写道磁盘中。<br>但对一个 复制集的 部署架构，要确保数据也同时同步到复制集中。{w:number},number 要是复制集的数目。<br>1 只代表写到 standalone的 hosts ，或者 复制集架构的的master。</p>
 <p>注意：<br>如果对数据一致性要求不高，可以使用读写分离。<br>如果对数据一致性要求高，要慎重开启读写分离，或者配置写操作的option {w:$number}。</p>
 ]]></content>
     <summary type="html">
