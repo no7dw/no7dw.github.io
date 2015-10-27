@@ -1,5 +1,5 @@
-title: ## 将已有的集合转化为固定集合碰到的问题 ##
-
+title: 将已有的集合转化为固定集合碰到的问题 
+---
 将已有的集合转化为固定集合
     db.runCommand({convertToCapped:"test",size:10000});
     
