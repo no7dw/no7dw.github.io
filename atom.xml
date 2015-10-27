@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-10-27T08:58:45.000Z</updated>
+  <updated>2015-10-27T15:13:33.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -13,6 +13,279 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[mongodb-notice]]></title>
+    <link href="http://yoursite.com/2015/10/27/mongodb-notice/"/>
+    <id>http://yoursite.com/2015/10/27/mongodb-notice/</id>
+    <published>2015-10-27T15:13:23.000Z</published>
+    <updated>2015-10-27T15:13:33.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="使用mongodb注意事项">使用mongodb注意事项</h2><ul>
+<li>mongodb 会lock db</li>
+<li>multi write: 注意速度，一般而言，以下是速度正常参考值：<ul>
+<li>query 0-10 ms  </li>
+<li>write 0-100ms</li>
+</ul>
+</li>
+<li>transaction : <ul>
+<li>two phase commit （官方推荐，－－ <strong>没回滚，然并卵</strong>）; </li>
+<li>mongoose-transaction</li>
+</ul>
+</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="使用mongodb注意事项">使用mongodb注意事项</h2><ul>
+<li>mongodb 会lock db</li>
+<li>multi write: 注意速度，一般而言，以下是速度正常参考值：<ul>
+<li>query 0-10 ms  </li>
+]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[testing]]></title>
+    <link href="http://yoursite.com/2015/10/27/testing/"/>
+    <id>http://yoursite.com/2015/10/27/testing/</id>
+    <published>2015-10-27T15:12:09.000Z</published>
+    <updated>2015-10-27T15:12:21.000Z</updated>
+    <content type="html"><![CDATA[<p>Testing </p>
+<ul>
+<li>makefile, – make coverage，</li>
+<li>grunt</li>
+<li>mocha</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Testing </p>
+<ul>
+<li>makefile, – make coverage，</li>
+<li>grunt</li>
+<li>mocha</li>
+</ul>
+]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[callbackhell]]></title>
+    <link href="http://yoursite.com/2015/10/27/callbackhell/"/>
+    <id>http://yoursite.com/2015/10/27/callbackhell/</id>
+    <published>2015-10-27T15:10:51.000Z</published>
+    <updated>2015-10-27T15:11:38.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="使用_callback_注意事项">使用 callback 注意事项</h2><p>callback hell 解决：</p>
+<ul>
+<li>q, bluebird , </li>
+<li>async, thenjs </li>
+<li>eventproxy </li>
+<li>promise, thunk</li>
+</ul>
+<hr>
+<h2 id="使用_async_解决_callback_，写法上注意事项">使用 async 解决 callback ，写法上注意事项</h2><ul>
+<li>long Procedure in async.waterfall</li>
+<li><p>use event:</p>
+<p> event_util.emit(“cashflow_over_quota”, ‘create’, JSON.stringify(cashflow));</p>
+</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="使用_callback_注意事项">使用 callback 注意事项</h2><p>callback hell 解决：</p>
+<ul>
+<li>q, bluebird , </li>
+<li>async, thenjs </li>
+<li>eventproxy ]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[nodejs-array]]></title>
+    <link href="http://yoursite.com/2015/10/27/nodejs-array/"/>
+    <id>http://yoursite.com/2015/10/27/nodejs-array/</id>
+    <published>2015-10-27T15:10:03.000Z</published>
+    <updated>2015-10-27T15:10:36.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="使用nodejs_数组坑">使用nodejs 数组坑</h2><p>async 大数组（&gt;5000）, 会报堆栈溢出 Max stack size。<br>解决：</p>
+<ul>
+<li>setImmediate,</li>
+<li>–stack-size=32000 , 启动传此参数</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="使用nodejs_数组坑">使用nodejs 数组坑</h2><p>async 大数组（&gt;5000）, 会报堆栈溢出 Max stack size。<br>解决：</p>
+<ul>
+<li>setImmediate,</li>
+<li>–stack-size]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[sails.js-learning]]></title>
+    <link href="http://yoursite.com/2015/10/27/sails-js-learning/"/>
+    <id>http://yoursite.com/2015/10/27/sails-js-learning/</id>
+    <published>2015-10-27T15:07:15.000Z</published>
+    <updated>2015-10-27T15:13:48.000Z</updated>
+    <content type="html"><![CDATA[<p>目的：加快开发速度，总结使用方法：<br>menu list:</p>
+<ul>
+<li>custom controller </li>
+<li>custom 模块使用 </li>
+<li>custom model </li>
+<li>custom middleware  </li>
+<li>custom</li>
+<li>service</li>
+</ul>
+<h2 id="关于启动_##：">关于启动 ##：</h2><hr>
+<p>config/connection – db connection<br>入口: app.js<br>config/bootstrap - 启动入口app.js 后的<br>config/policies 配置<br>bin/*.json</p>
+<h2 id="关于DIY_##：">关于DIY ##：</h2><hr>
+<p>config/router<br>路由与对应的controller处理:<br>用命令行 &amp; controller 变化<br>wade-mac:fin_server_invest mac$ sails generate controller mail sendmaillog<br>info: Created a new controller (“mail”) at api/controllers/MailController.js!<br>路由总汇总：config/routes.js<br>    想往常一样加：, ‘GET /make/a/mail’:”MailController.sendmaillog”</p>
+<p>模块的使用： －－  与以前一样</p>
+<pre><code> /<span class="keyword">*</span><span class="keyword">*</span>
+ <span class="keyword">*</span> MailController
+ <span class="keyword">*</span>
+ <span class="keyword">*</span> <span class="comment">@description :: Server-side logic for managing mails</span>
+ <span class="keyword">*</span> <span class="comment">@help        :: See http://links.sailsjs.org/docs/controllers</span>
+ <span class="keyword">*</span>/
+
+module.exports = {
+
+
+
+  /<span class="keyword">*</span><span class="keyword">*</span>
+   <span class="keyword">*</span> `MailController.sendmaillog()`
+   <span class="keyword">*</span>/
+  sendmaillog: function (req, res) {
+    var log4js = require('log4js');
+    var logger = log4js.getLogger();
+    logger.debug(<span class="string">"Some debug messages"</span>);
+
+    return res.json({
+      todo: 'sendmaillog() is not implemented yet!'
+    });
+  }
+};
+</code></pre><p>model command ：<br>    <a href="https://www.digitalocean.com/community/tutorials/how-to-create-an-node-js-app-using-sails-js-on-an-ubuntu-vps" target="_blank" rel="external">https://www.digitalocean.com/community/tutorials/how-to-create-an-node-js-app-using-sails-js-on-an-ubuntu-vps</a></p>
+<pre><code><span class="variable">$sails</span> generate model user name:string email:string password:string
+<span class="variable">$sails</span> generate controller user index show edit <span class="keyword">delete</span>
+</code></pre><p>middleware：<br><a href="https://gist.github.com/mikermcneil/6255295" target="_blank" rel="external">https://gist.github.com/mikermcneil/6255295</a><br>look at config/http.js</p>
+<pre><code>module.exports.http = {
+
+  /<span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span>
+  <span class="keyword">*</span>                                                                           <span class="keyword">*</span>
+  <span class="keyword">*</span> Express middleware to use for every Sails request. To add custom          <span class="keyword">*</span>
+  <span class="keyword">*</span> middleware to the mix, add a function to the middleware config object and <span class="keyword">*</span>
+  <span class="keyword">*</span> add its key to the <span class="string">"order"</span> array. The $custom key is reserved for         <span class="keyword">*</span>
+  <span class="keyword">*</span> backwards-compatibility with Sails v0.9.x apps that use the               <span class="keyword">*</span>
+  <span class="keyword">*</span> `customMiddleware` config option.                                         <span class="keyword">*</span>
+  <span class="keyword">*</span>                                                                           <span class="keyword">*</span>
+  <span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span>/
+
+  middleware: {
+
+  /<span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span>
+  <span class="keyword">*</span>                                                                          <span class="keyword">*</span>
+  <span class="keyword">*</span> The order in which middleware should be run for HTTP request. (the Sails <span class="keyword">*</span>
+  <span class="keyword">*</span> router is invoked by the <span class="string">"router"</span> middleware below.)                     <span class="keyword">*</span>
+  <span class="keyword">*</span>                                                                          <span class="keyword">*</span>
+  <span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span>/
+
+    order: [
+       'startRequestTimer',
+       'cookieParser',
+       'session',
+       'myRequestLogger',
+       'bodyParser',
+       'handleBodyParserError',
+       'compress',
+       'methodOverride',
+       'poweredBy',
+       '$custom',
+       'router',
+       'www',
+       'favicon',
+       '404',
+       '500'
+    ],
+
+  /<span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span>
+  <span class="keyword">*</span>                                                                           <span class="keyword">*</span>
+  <span class="keyword">*</span> Example custom middleware; logs each request to the console.              <span class="keyword">*</span>
+  <span class="keyword">*</span>                                                                           <span class="keyword">*</span>
+  <span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span>/
+
+    myRequestLogger: function (req, res, next) {
+         console.log(<span class="string">"Requested :: "</span>, req.method, req.url);
+         return next();
+    },
+
+
+  /<span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span>
+  <span class="keyword">*</span>                                                                          <span class="keyword">*</span>
+  <span class="keyword">*</span> The body parser that will handle incoming multipart HTTP requests. By    <span class="keyword">*</span>
+  <span class="keyword">*</span> default as of v0.10, Sails uses                                          <span class="keyword">*</span>
+  <span class="keyword">*</span> [skipper](http://github.com/balderdashy/skipper). See                    <span class="keyword">*</span>
+  <span class="keyword">*</span> http://www.senchalabs.org/connect/multipart.html for other options.      <span class="keyword">*</span>
+  <span class="keyword">*</span>                                                                          <span class="keyword">*</span>
+  <span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span>/
+
+    bodyParser: require('skipper')
+
+  },
+
+  /<span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span>
+  <span class="keyword">*</span>                                                                          <span class="keyword">*</span>
+  <span class="keyword">*</span> The number of seconds to cache flat files on disk being served by        <span class="keyword">*</span>
+  <span class="keyword">*</span> Express static middleware (by default, these files are in `.tmp/public`) <span class="keyword">*</span>
+  <span class="keyword">*</span>                                                                          <span class="keyword">*</span>
+  <span class="keyword">*</span> The HTTP static cache is only active in a 'production' environment,      <span class="keyword">*</span>
+  <span class="keyword">*</span> since that's the only time Express will cache flat-files.                <span class="keyword">*</span>
+  <span class="keyword">*</span>                                                                          <span class="keyword">*</span>
+  <span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span>/
+
+  cache: 31557600000
+};
+</code></pre><p>上面的是所有的路由都经过的middleware<br>疑问：控制某个路由/a  经过middleware: [a, b, c ] , 某个路由/b 经过middleware: [a, c ] </p>
+<hr>
+<h2 id="一些文件夹">一些文件夹</h2><ul>
+<li>service 本项目单独的业务逻辑</li>
+<li>lib  存放一些共用的lib </li>
+<li>data 存放常用配置、数据</li>
+</ul>
+<h2 id="CRUD">CRUD</h2><ul>
+<li>CRUD – model  </li>
+<li>CRUD – 尽量使用 native<ul>
+<li>速度快</li>
+<li>适合复杂操作</li>
+</ul>
+</li>
+<li>CRUD – 坑<ul>
+<li>并发：使用findandmodify &amp; update(upsert) &amp; findorcreate   </li>
+</ul>
+</li>
+</ul>
+<pre><code>//findandmodify
+<span class="type">Order</span>.native(function (err, collection) {
+ collection.findAndModify(query, null, {$<span class="type">set</span>: update_data}, {'new': <span class="literal">false</span>}, function (err, newResult, detail) {
+
+//update  upsert
+<span class="type">User_account_cashflow</span>.native(function(err, colletion){
+ colletion.update(query, {$<span class="type">set</span>: cashflow },{upsert:<span class="literal">true</span>, multi:<span class="literal">false</span>} , function(err, effectNum, <span class="literal">result</span>){
+   callback(err, cashflow, <span class="literal">result</span>.updatedExisting);
+ });
+});
+</code></pre><hr>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>目的：加快开发速度，总结使用方法：<br>menu list:</p>
+<ul>
+<li>custom controller </li>
+<li>custom 模块使用 </li>
+<li>custom model </li>
+<li>custom middleware  ]]>
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[使用webstorm 配置文件配置mocha]]></title>
