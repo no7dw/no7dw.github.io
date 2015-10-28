@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-10-27T15:13:33.000Z</updated>
+  <updated>2015-10-28T02:25:30.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -13,6 +13,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[使用webstorm 配置文件配置mocha]]></title>
+    <link href="http://yoursite.com/2015/10/28/webstorm_mocha/"/>
+    <id>http://yoursite.com/2015/10/28/webstorm_mocha/</id>
+    <published>2015-10-28T02:25:30.000Z</published>
+    <updated>2015-10-28T02:25:30.000Z</updated>
+    <content type="html"><![CDATA[<p>Webstorm 的运行配置文件。<br>Mocha_Coverage.xml  使用 Mocha 运行测试。</p>
+<pre><code><span class="tag">&lt;<span class="title">component</span> <span class="attribute">name</span>=<span class="value">"ProjectRunConfigurationManager"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">configuration</span> <span class="attribute">default</span>=<span class="value">"false"</span> <span class="attribute">name</span>=<span class="value">"Mocha Coverage"</span> <span class="attribute">type</span>=<span class="value">"mocha-javascript-test-runner"</span> <span class="attribute">factoryName</span>=<span class="value">"Mocha"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">node-options</span> /&gt;</span>
+    <span class="tag">&lt;<span class="title">working-directory</span>&gt;</span>$PROJECT_DIR$<span class="tag">&lt;/<span class="title">working-directory</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">pass-parent-env</span>&gt;</span>true<span class="tag">&lt;/<span class="title">pass-parent-env</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">envs</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">env</span> <span class="attribute">name</span>=<span class="value">"REDIS_HOST"</span> <span class="attribute">value</span>=<span class="value">"koala"</span> /&gt;</span>
+      <span class="tag">&lt;<span class="title">env</span> <span class="attribute">name</span>=<span class="value">"PORT"</span> <span class="attribute">value</span>=<span class="value">"8012"</span> /&gt;</span>
+      <span class="tag">&lt;<span class="title">env</span> <span class="attribute">name</span>=<span class="value">"TOKEN_SECRET"</span> <span class="attribute">value</span>=<span class="value">"koala"</span> /&gt;</span>
+      <span class="tag">&lt;<span class="title">env</span> <span class="attribute">name</span>=<span class="value">"RUN_UNITTEST"</span> <span class="attribute">value</span>=<span class="value">"TEST"</span> /&gt;</span>
+      <span class="tag">&lt;<span class="title">env</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">value</span>=<span class="value">""</span> /&gt;</span>
+    <span class="tag">&lt;/<span class="title">envs</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">ui</span>&gt;</span>bdd<span class="tag">&lt;/<span class="title">ui</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">extra-mocha-options</span> /&gt;</span>
+    <span class="tag">&lt;<span class="title">test-directory</span>&gt;</span>$PROJECT_DIR$/test/<span class="tag">&lt;/<span class="title">test-directory</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">recursive</span>&gt;</span>true<span class="tag">&lt;/<span class="title">recursive</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">method</span> /&gt;</span>
+  <span class="tag">&lt;/<span class="title">configuration</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">component</span>&gt;</span>
+</code></pre><p>config.sh</p>
+<pre><code><span class="shebang">#!/bin/bash</span>
+<span class="built_in">echo</span> <span class="string">'mkdir $PROJECT_DIR$/.idea/runConfigurations'</span>
+mkdir -p ../../.idea/runConfigurations
+
+<span class="built_in">echo</span> <span class="string">'copy files to  $PROJECT_DIR$/.idea/runConfigurations'</span>
+cp Mocha_Coverage.xml ../../.idea/runConfigurations/
+</code></pre><p><img src="http://7xk67t.com1.z0.glb.clouddn.com/configMocha.png" alt="webstrom config 效果图"></p>
+<p><img src="http://7xk67t.com1.z0.glb.clouddn.com/mocha.png" alt="运行效果图"></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Webstorm 的运行配置文件。<br>Mocha_Coverage.xml  使用 Mocha 运行测试。</p>
+<pre><code><span class="tag">&lt;<span class="title">component</span> <span c]]>
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[mongodb-notice]]></title>
@@ -49,7 +92,7 @@
     <link href="http://yoursite.com/2015/10/27/testing/"/>
     <id>http://yoursite.com/2015/10/27/testing/</id>
     <published>2015-10-27T15:12:09.000Z</published>
-    <updated>2015-10-27T15:12:21.000Z</updated>
+    <updated>2015-10-28T02:23:10.000Z</updated>
     <content type="html"><![CDATA[<p>Testing </p>
 <ul>
 <li>makefile, – make coverage，</li>
@@ -105,7 +148,7 @@
     <link href="http://yoursite.com/2015/10/27/nodejs-array/"/>
     <id>http://yoursite.com/2015/10/27/nodejs-array/</id>
     <published>2015-10-27T15:10:03.000Z</published>
-    <updated>2015-10-27T15:10:36.000Z</updated>
+    <updated>2015-10-27T15:10:39.000Z</updated>
     <content type="html"><![CDATA[<h2 id="使用nodejs_数组坑">使用nodejs 数组坑</h2><p>async 大数组（&gt;5000）, 会报堆栈溢出 Max stack size。<br>解决：</p>
 <ul>
 <li>setImmediate,</li>
@@ -283,47 +326,6 @@ module.exports = {
 <li>custom 模块使用 </li>
 <li>custom model </li>
 <li>custom middleware  ]]>
-    </summary>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[使用webstorm 配置文件配置mocha]]></title>
-    <link href="http://yoursite.com/2015/10/27/webstorm_mocha/"/>
-    <id>http://yoursite.com/2015/10/27/webstorm_mocha/</id>
-    <published>2015-10-27T08:58:45.000Z</published>
-    <updated>2015-10-27T08:58:45.000Z</updated>
-    <content type="html"><![CDATA[<p>Webstorm 的运行配置文件。<br>Mocha_Coverage.xml  使用 Mocha 运行测试。</p>
-<pre><code><span class="tag">&lt;<span class="title">component</span> <span class="attribute">name</span>=<span class="value">"ProjectRunConfigurationManager"</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">configuration</span> <span class="attribute">default</span>=<span class="value">"false"</span> <span class="attribute">name</span>=<span class="value">"Mocha Coverage"</span> <span class="attribute">type</span>=<span class="value">"mocha-javascript-test-runner"</span> <span class="attribute">factoryName</span>=<span class="value">"Mocha"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">node-options</span> /&gt;</span>
-    <span class="tag">&lt;<span class="title">working-directory</span>&gt;</span>$PROJECT_DIR$<span class="tag">&lt;/<span class="title">working-directory</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">pass-parent-env</span>&gt;</span>true<span class="tag">&lt;/<span class="title">pass-parent-env</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">envs</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">env</span> <span class="attribute">name</span>=<span class="value">"REDIS_HOST"</span> <span class="attribute">value</span>=<span class="value">"koala"</span> /&gt;</span>
-      <span class="tag">&lt;<span class="title">env</span> <span class="attribute">name</span>=<span class="value">"PORT"</span> <span class="attribute">value</span>=<span class="value">"8012"</span> /&gt;</span>
-      <span class="tag">&lt;<span class="title">env</span> <span class="attribute">name</span>=<span class="value">"TOKEN_SECRET"</span> <span class="attribute">value</span>=<span class="value">"koala"</span> /&gt;</span>
-      <span class="tag">&lt;<span class="title">env</span> <span class="attribute">name</span>=<span class="value">"RUN_UNITTEST"</span> <span class="attribute">value</span>=<span class="value">"TEST"</span> /&gt;</span>
-      <span class="tag">&lt;<span class="title">env</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">value</span>=<span class="value">""</span> /&gt;</span>
-    <span class="tag">&lt;/<span class="title">envs</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">ui</span>&gt;</span>bdd<span class="tag">&lt;/<span class="title">ui</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">extra-mocha-options</span> /&gt;</span>
-    <span class="tag">&lt;<span class="title">test-directory</span>&gt;</span>$PROJECT_DIR$/test/<span class="tag">&lt;/<span class="title">test-directory</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">recursive</span>&gt;</span>true<span class="tag">&lt;/<span class="title">recursive</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">method</span> /&gt;</span>
-  <span class="tag">&lt;/<span class="title">configuration</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">component</span>&gt;</span>
-</code></pre><p>config.sh</p>
-<pre><code><span class="shebang">#!/bin/bash</span>
-<span class="built_in">echo</span> <span class="string">'mkdir $PROJECT_DIR$/.idea/runConfigurations'</span>
-mkdir -p ../../.idea/runConfigurations
-
-<span class="built_in">echo</span> <span class="string">'copy files to  $PROJECT_DIR$/.idea/runConfigurations'</span>
-cp Mocha_Coverage.xml ../../.idea/runConfigurations/
-</code></pre>]]></content>
-    <summary type="html">
-    <![CDATA[<p>Webstorm 的运行配置文件。<br>Mocha_Coverage.xml  使用 Mocha 运行测试。</p>
-<pre><code><span class="tag">&lt;<span class="title">component</span> <span c]]>
     </summary>
     
   </entry>

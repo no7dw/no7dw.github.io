@@ -61,6 +61,71 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-webstorm_mocha" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/10/28/webstorm_mocha/" class="article-date">
+  <time datetime="2015-10-28T02:25:30.000Z" itemprop="datePublished">2015-10-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/28/webstorm_mocha/">使用webstorm 配置文件配置mocha</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Webstorm 的运行配置文件。<br>Mocha_Coverage.xml  使用 Mocha 运行测试。</p>
+<pre><code><span class="tag">&lt;<span class="title">component</span> <span class="attribute">name</span>=<span class="value">"ProjectRunConfigurationManager"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">configuration</span> <span class="attribute">default</span>=<span class="value">"false"</span> <span class="attribute">name</span>=<span class="value">"Mocha Coverage"</span> <span class="attribute">type</span>=<span class="value">"mocha-javascript-test-runner"</span> <span class="attribute">factoryName</span>=<span class="value">"Mocha"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">node-options</span> /&gt;</span>
+    <span class="tag">&lt;<span class="title">working-directory</span>&gt;</span>$PROJECT_DIR$<span class="tag">&lt;/<span class="title">working-directory</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">pass-parent-env</span>&gt;</span>true<span class="tag">&lt;/<span class="title">pass-parent-env</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">envs</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">env</span> <span class="attribute">name</span>=<span class="value">"REDIS_HOST"</span> <span class="attribute">value</span>=<span class="value">"koala"</span> /&gt;</span>
+      <span class="tag">&lt;<span class="title">env</span> <span class="attribute">name</span>=<span class="value">"PORT"</span> <span class="attribute">value</span>=<span class="value">"8012"</span> /&gt;</span>
+      <span class="tag">&lt;<span class="title">env</span> <span class="attribute">name</span>=<span class="value">"TOKEN_SECRET"</span> <span class="attribute">value</span>=<span class="value">"koala"</span> /&gt;</span>
+      <span class="tag">&lt;<span class="title">env</span> <span class="attribute">name</span>=<span class="value">"RUN_UNITTEST"</span> <span class="attribute">value</span>=<span class="value">"TEST"</span> /&gt;</span>
+      <span class="tag">&lt;<span class="title">env</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">value</span>=<span class="value">""</span> /&gt;</span>
+    <span class="tag">&lt;/<span class="title">envs</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">ui</span>&gt;</span>bdd<span class="tag">&lt;/<span class="title">ui</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">extra-mocha-options</span> /&gt;</span>
+    <span class="tag">&lt;<span class="title">test-directory</span>&gt;</span>$PROJECT_DIR$/test/<span class="tag">&lt;/<span class="title">test-directory</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">recursive</span>&gt;</span>true<span class="tag">&lt;/<span class="title">recursive</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">method</span> /&gt;</span>
+  <span class="tag">&lt;/<span class="title">configuration</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">component</span>&gt;</span>
+</code></pre><p>config.sh</p>
+<pre><code><span class="shebang">#!/bin/bash</span>
+<span class="built_in">echo</span> <span class="string">'mkdir $PROJECT_DIR$/.idea/runConfigurations'</span>
+mkdir -p ../../.idea/runConfigurations
+
+<span class="built_in">echo</span> <span class="string">'copy files to  $PROJECT_DIR$/.idea/runConfigurations'</span>
+cp Mocha_Coverage.xml ../../.idea/runConfigurations/
+</code></pre><p><img src="http://7xk67t.com1.z0.glb.clouddn.com/configMocha.png" alt="webstrom config 效果图"></p>
+<p><img src="http://7xk67t.com1.z0.glb.clouddn.com/mocha.png" alt="运行效果图"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/10/28/webstorm_mocha/" data-id="cig9iqfar000145ysgqbus747" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-mongodb-notice" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/10/27/mongodb-notice/" class="article-date">
@@ -100,7 +165,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/27/mongodb-notice/" data-id="cig9ijdnu0009wlysclpzkuv2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/10/27/mongodb-notice/" data-id="cig9iqfaz000645ys4xcpureo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -142,7 +207,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/27/testing/" data-id="cig9ihskk0008wlyspt6qfs71" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/10/27/testing/" data-id="cig9iqfat000245ys9o28d17t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -192,7 +257,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/27/callbackhell/" data-id="cig9ig41n0007wlysettxols2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/10/27/callbackhell/" data-id="cig9iqfa9000045ystpcpmgqd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -233,7 +298,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/27/nodejs-array/" data-id="cig9if3ld0006wlysg3mu7o5g" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/10/27/nodejs-array/" data-id="cig9iqfax000545ysu3xkpn8m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -417,70 +482,7 @@ module.exports = {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/27/sails-js-learning/" data-id="cig9ibhrr0005wlystn40zjxi" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-webstorm_mocha" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/10/27/webstorm_mocha/" class="article-date">
-  <time datetime="2015-10-27T08:58:45.000Z" itemprop="datePublished">2015-10-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/27/webstorm_mocha/">使用webstorm 配置文件配置mocha</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Webstorm 的运行配置文件。<br>Mocha_Coverage.xml  使用 Mocha 运行测试。</p>
-<pre><code><span class="tag">&lt;<span class="title">component</span> <span class="attribute">name</span>=<span class="value">"ProjectRunConfigurationManager"</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">configuration</span> <span class="attribute">default</span>=<span class="value">"false"</span> <span class="attribute">name</span>=<span class="value">"Mocha Coverage"</span> <span class="attribute">type</span>=<span class="value">"mocha-javascript-test-runner"</span> <span class="attribute">factoryName</span>=<span class="value">"Mocha"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">node-options</span> /&gt;</span>
-    <span class="tag">&lt;<span class="title">working-directory</span>&gt;</span>$PROJECT_DIR$<span class="tag">&lt;/<span class="title">working-directory</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">pass-parent-env</span>&gt;</span>true<span class="tag">&lt;/<span class="title">pass-parent-env</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">envs</span>&gt;</span>
-      <span class="tag">&lt;<span class="title">env</span> <span class="attribute">name</span>=<span class="value">"REDIS_HOST"</span> <span class="attribute">value</span>=<span class="value">"koala"</span> /&gt;</span>
-      <span class="tag">&lt;<span class="title">env</span> <span class="attribute">name</span>=<span class="value">"PORT"</span> <span class="attribute">value</span>=<span class="value">"8012"</span> /&gt;</span>
-      <span class="tag">&lt;<span class="title">env</span> <span class="attribute">name</span>=<span class="value">"TOKEN_SECRET"</span> <span class="attribute">value</span>=<span class="value">"koala"</span> /&gt;</span>
-      <span class="tag">&lt;<span class="title">env</span> <span class="attribute">name</span>=<span class="value">"RUN_UNITTEST"</span> <span class="attribute">value</span>=<span class="value">"TEST"</span> /&gt;</span>
-      <span class="tag">&lt;<span class="title">env</span> <span class="attribute">name</span>=<span class="value">""</span> <span class="attribute">value</span>=<span class="value">""</span> /&gt;</span>
-    <span class="tag">&lt;/<span class="title">envs</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">ui</span>&gt;</span>bdd<span class="tag">&lt;/<span class="title">ui</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">extra-mocha-options</span> /&gt;</span>
-    <span class="tag">&lt;<span class="title">test-directory</span>&gt;</span>$PROJECT_DIR$/test/<span class="tag">&lt;/<span class="title">test-directory</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">recursive</span>&gt;</span>true<span class="tag">&lt;/<span class="title">recursive</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">method</span> /&gt;</span>
-  <span class="tag">&lt;/<span class="title">configuration</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">component</span>&gt;</span>
-</code></pre><p>config.sh</p>
-<pre><code><span class="shebang">#!/bin/bash</span>
-<span class="built_in">echo</span> <span class="string">'mkdir $PROJECT_DIR$/.idea/runConfigurations'</span>
-mkdir -p ../../.idea/runConfigurations
-
-<span class="built_in">echo</span> <span class="string">'copy files to  $PROJECT_DIR$/.idea/runConfigurations'</span>
-cp Mocha_Coverage.xml ../../.idea/runConfigurations/
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/27/webstorm_mocha/" data-id="cig9i74a20001wlys72u2a4mq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/10/27/sails-js-learning/" data-id="cig9iqfau000345yss4oq0ij7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -525,7 +527,7 @@ cp Mocha_Coverage.xml ../../.idea/runConfigurations/
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/27/replicate_error/" data-id="cig9i74a30002wlysmb27cz4c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/10/27/replicate_error/" data-id="cig9iqfaw000445yscz9dgea1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -612,7 +614,7 @@ WriteResult({ <span class="string">"nInserted"</span> : <span class="number">1</
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/27/maintain_mongodb/" data-id="cig9i74a60004wlysvuhzuut5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/10/27/maintain_mongodb/" data-id="cig9iqfb2000845ys169361f2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -657,7 +659,7 @@ WriteResult({ <span class="string">"nInserted"</span> : <span class="number">1</
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/16/hello-world/" data-id="cig9i749f0000wlysuqjrp03w" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/10/16/hello-world/" data-id="cig9iqfb3000945ys9btbd5b0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -735,7 +737,7 @@ https://docs.cloud.mongodb.com/tutorial/<span class="keyword">start</span>-<span
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/15/mms-key-index/" data-id="cig9i74a50003wlys44u0rfno" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/10/15/mms-key-index/" data-id="cig9iqfb1000745ysq60ntcrs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -772,6 +774,10 @@ https://docs.cloud.mongodb.com/tutorial/<span class="keyword">start</span>-<span
       <ul>
         
           <li>
+            <a href="/2015/10/28/webstorm_mocha/">使用webstorm 配置文件配置mocha</a>
+          </li>
+        
+          <li>
             <a href="/2015/10/27/mongodb-notice/">mongodb-notice</a>
           </li>
         
@@ -785,10 +791,6 @@ https://docs.cloud.mongodb.com/tutorial/<span class="keyword">start</span>-<span
         
           <li>
             <a href="/2015/10/27/nodejs-array/">nodejs-array</a>
-          </li>
-        
-          <li>
-            <a href="/2015/10/27/sails-js-learning/">sails.js-learning</a>
           </li>
         
       </ul>
