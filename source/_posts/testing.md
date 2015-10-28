@@ -10,6 +10,4 @@ Testing
 
 
 
-  [1]: https://www.digitalocean.com/community/tutorials/how-to-create-an-node-js-app-using-sails-js-on-an-ubuntu-vps
-  [2]: https://gist.github.com/mikermcneil/6255295
 

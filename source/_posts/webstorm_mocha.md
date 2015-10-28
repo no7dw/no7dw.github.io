@@ -34,4 +34,11 @@ config.sh
     echo 'copy files to  $PROJECT_DIR$/.idea/runConfigurations'
     cp Mocha_Coverage.xml ../../.idea/runConfigurations/
 
-  
+
+![webstrom config 效果图][1]
+
+![运行效果图][2]
+
+
+  [1]: http://7xk67t.com1.z0.glb.clouddn.com/configMocha.png
+  [2]: http://7xk67t.com1.z0.glb.clouddn.com/mocha.png 
