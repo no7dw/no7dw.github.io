@@ -2,11 +2,8 @@ title: haproxy config new ssl
 date: 2015-11-11 16:34:55
 tags:
 ---
-# haproxy using SSL with evssl.cn
 
-------
-
-https 快过期，通过原授权网站重新申请续费ssl后，拿到dommain_sha256_cn.zip dommain_sha1_cn.zip
+https 快过期，通过原授权网站 evssl.cn 重新申请续费ssl后，拿到dommain_sha256_cn.zip dommain_sha1_cn.zip
 
 解压后，改zip文件提供apache/nginx/other 等web server 的 
 
