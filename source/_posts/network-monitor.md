@@ -2,10 +2,10 @@ title: network_monitor
 date: 2015-12-30 21:19:21
 tags:
 ---
-# 网络监控
+# 在局域网监控其他机器
 
 ------
-在局域网监控其他机器：
+由于觉得内网机器有异常的流量流入服务器，于是要在局域网监控其他机器，装了wireshark 监控后，发现只能监控发给自己的、自己发出的，多播、广播的，监控不了其他的机器。即使开了promiscuous模式。另外有些网卡/OS不支持混杂模式。于是去看FAQ：
  
 [wireshark relative ref][1]:
 6. Capturing packets
@@ -29,6 +29,26 @@ In the case of wireless LAN interfaces, it appears that, when those interfaces a
 
 
 简单解释：
+局域网不可以随便可以监听别人的信息。在router & switch 中，单播与多播的包都是去往特定的机器的，不是你的信息，是不会发到你的机器中。
+hub 中才可以监听到。
+所以要实现监听，要在上一级网络。
+
+ok。根据我们当前的网络情况，我们有一个5 口（4Wan 1Lan）路由：TL-ER6120,一个24口交换机NetGear GS724T。
+交换机接在路由器Lan口。路由器的4Wan口都是用于接拨号的外网网络。Lan口接内网。
+看了manual, 交换机有monitor 功能，但不是用来监控网络的。路由器有监控网络流量的功能，但功能太简单，只能区分来源IP，包类别（用于监控客户用什么软件，Audit 功能）。
+
+咨询相关同事后说两种方案：
+
+ - 要做一台中间机，在路由器与交换机之间做转发，同时做监控。 
+ - 特点的路由器/交换机可以做复制包功能，将所有包转发到监控端口。
+
+于是结合细看Manual，发现我们使用的路由刚好有个port mirror 功能。
+于是设置路由将原来的4wan口1Lan模式转化为3wan口模式2Lan模式，将5th Lan口 mirror 到4th Lan 口做监控。
+
+然后4thLan  接出来一台机器，ok check 1下，可以上网。再开wireshark，得到有5th Lan 口转发过来的所有流量请求了。
+后续再接着按需做监控。
 
 
+
+ 
   [1]: https://www.wireshark.org/faq.html#q6.1
