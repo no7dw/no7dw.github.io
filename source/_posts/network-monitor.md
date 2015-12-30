@@ -5,9 +5,11 @@ tags:
 # 在局域网监控其他机器
 
 ------
-由于觉得内网机器有异常的流量流入服务器，于是要在局域网监控其他机器，装了wireshark 监控后，发现只能监控发给自己的、自己发出的，多播、广播的，监控不了其他的机器。即使开了promiscuous模式。另外有些网卡/OS不支持混杂模式。于是去看FAQ：
+由于觉得内网机器有异常的流量流入服务器，于是要在局域网监控其他机器，装了wireshark 监控后，发现只能监控发给自己的、自己发出的，多播、广播的，监控不了其他的机器。即使开了promiscuous模式。另外有些网卡/OS不支持混杂模式。
+![wireshark promiscuous mode][1]
+于是去看FAQ：
  
-[wireshark relative ref][1]:
+[wireshark relative ref][2]:
 6. Capturing packets
 Q 6.1: When I use Wireshark to capture packets, why do I see only packets to and from my machine, or not see all the traffic I'm expecting to see from or to the machine I'm trying to monitor?
 
@@ -35,7 +37,13 @@ hub 中才可以监听到。
 
 ok。根据我们当前的网络情况，我们有一个5 口（4Wan 1Lan）路由：TL-ER6120,一个24口交换机NetGear GS724T。
 交换机接在路由器Lan口。路由器的4Wan口都是用于接拨号的外网网络。Lan口接内网。
-看了manual, 交换机有monitor 功能，但不是用来监控网络的。路由器有监控网络流量的功能，但功能太简单，只能区分来源IP，包类别（用于监控客户用什么软件，Audit 功能）。
+看了manual, 交换机有monitor 功能，但不是用来监控网络的。
+![看起来有用][3]
+![此处输入图片的描述][4]
+并且连接不上去web console。估计要reset。暂时放弃。
+
+路由器有监控网络流量的功能，但功能太简单，只能区分来源IP，包类别（用于监控客户用什么软件，Audit 功能）。
+
 
 咨询相关同事后说两种方案：
 
@@ -48,7 +56,14 @@ ok。根据我们当前的网络情况，我们有一个5 口（4Wan 1Lan）路�
 然后4thLan  接出来一台机器，ok check 1下，可以上网。再开wireshark，得到有5th Lan 口转发过来的所有流量请求了。
 后续再接着按需做监控。
 
+续：其实交换机的monitor 功能setting 的sniffer 功能应该是有用的，只是我们连不上控制台，担心reset 网络会出问题，用了一个快的少影响的办法。
+
 
 
  
-  [1]: https://www.wireshark.org/faq.html#q6.1
+
+
+  [1]: http://7xk67t.com1.z0.glb.clouddn.com/wireshark%20sniffer%20setting.png
+  [2]: https://www.wireshark.org/faq.html#q6.1
+  [3]: http://7xk67t.com1.z0.glb.clouddn.com/netgear%20monitor.jpg
+  [4]: http://7xk67t.com1.z0.glb.clouddn.com/netgear%20web%20console.jpg
