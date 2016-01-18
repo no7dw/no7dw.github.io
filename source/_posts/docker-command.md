@@ -60,6 +60,13 @@ tags:
     strongloop/node            StrongLoop, Node.js, and tools.                 20                   [OK]
 
 
+###enter container
+
+    $ docker exec -it <container id> /bin/bash
+
+### Print app output
+
+    $ docker logs <container id>
 
 
 
