@@ -62,3 +62,8 @@ runing on OSX:
 
  
 Turn out I should use docker container ip , which is 192.168.99.100 as default, besides you need to make sure the container is running.
+
+![此处输入图片的描述][1]
+
+
+  [1]: http://7xk67t.com1.z0.glb.clouddn.com/docker_running_config.png
