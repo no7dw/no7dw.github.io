@@ -59,3 +59,6 @@ runing on OSX:
      Docker Root Dir: /mnt/sda1/var/lib/docker
     Labels:
      provider=virtualbox
+
+ 
+Turn out I should use docker container ip , which is 192.168.99.100 as default, besides you need to make sure the container is running.
