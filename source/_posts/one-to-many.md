@@ -11,7 +11,7 @@ mongodb 3.x 提供了类似join 功能，但有类似的效果： $lookup
 
 这里讲的是通过ORM 实现。
 
-[此处输入链接的描述][1]
+[github project example][1]
 
 在mongoose 中使用的ref，
 在waterline 中使用的是model 的 **model** 实现关联
