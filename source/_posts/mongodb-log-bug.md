@@ -3,18 +3,19 @@ date: 2016-01-25 22:33:08
 tags:
 ---
 mongoshell
-> db.user_account_cashflow.remove({ user_id: "5585065a34a4f724f21894f9", objId: "569d653911a64a587b645b94", type: 1 })
-WriteResult({ "nRemoved" : 1 })
-> 
 
-
-> db.user_account_cashflow.update( { user_id: "5585065a34a4f724f21894f9", objId: "569d653911a64a587b645b94", type: 1 }, { $set: { time: 1453155641285.0, amount: 3000, type: 1, user_id: "5585065a34a4f724f21894f9", objId: "569d653911a64a587b645b94", order_id: "569d653911a64a587b645b94", remark: "购买考拉理财3000元", product_id: "549922452238c54e98b750bc", asset_id: "561d38143be1c145fac00f59", transactions_ids: [ "569d655611a64a587b645b96" ] } } , {upsert:1} )
-WriteResult({
-    "nMatched" : 0,
-    "nUpserted" : 1,
-    "nModified" : 0,
-    "_id" : ObjectId("56a62fb37b4d214b2f5e79f2")
-})
+    > db.user_account_cashflow.remove({ user_id: "5585065a34a4f724f21894f9", objId: "569d653911a64a587b645b94", type: 1 })
+    WriteResult({ "nRemoved" : 1 })
+    > 
+    
+    
+    > db.user_account_cashflow.update( { user_id: "5585065a34a4f724f21894f9", objId: "569d653911a64a587b645b94", type: 1 }, { $set: { time: 1453155641285.0, amount: 3000, type: 1, user_id: "5585065a34a4f724f21894f9", objId: "569d653911a64a587b645b94", order_id: "569d653911a64a587b645b94", remark: "购买考拉理财3000元", product_id: "549922452238c54e98b750bc", asset_id: "561d38143be1c145fac00f59", transactions_ids: [ "569d655611a64a587b645b96" ] } } , {upsert:1} )
+    WriteResult({
+        "nMatched" : 0,
+        "nUpserted" : 1,
+        "nModified" : 0,
+        "_id" : ObjectId("56a62fb37b4d214b2f5e79f2")
+    })
 
 //journal
 
@@ -30,9 +31,9 @@ WriteResult({
 update at second time 
 mongoshell
 
-> db.user_account_cashflow.update( { user_id: "5585065a34a4f724f21894f9", objId: "569d653911a64a587b645b94", type: 1 }, { $set: { time: 1453155641285.0, amount: 3000, type: 1, user_id: "5585065a34a4f724f21894f9", objId: "569d653911a64a587b645b94", order_id: "569d653911a64a587b645b94", remark: "购买考拉理财3000元", product_id: "549922452238c54e98b750bc", asset_id: "561d38143be1c145fac00f59", transactions_ids: [ "569d655611a64a587b645b96" ] } } , {upsert:1} )
-WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 0 })
-> 
+    > db.user_account_cashflow.update( { user_id: "5585065a34a4f724f21894f9", objId: "569d653911a64a587b645b94", type: 1 }, { $set: { time: 1453155641285.0, amount: 3000, type: 1, user_id: "5585065a34a4f724f21894f9", objId: "569d653911a64a587b645b94", order_id: "569d653911a64a587b645b94", remark: "购买考拉理财3000元", product_id: "549922452238c54e98b750bc", asset_id: "561d38143be1c145fac00f59", transactions_ids: [ "569d655611a64a587b645b96" ] } } , {upsert:1} )
+    WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 0 })
+    > 
 
 
 //journal
@@ -55,4 +56,5 @@ WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 0 })
         distarch: x86_64
         target_arch: x86_64
     
+
 
