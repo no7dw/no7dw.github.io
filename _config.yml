@@ -7,7 +7,7 @@ title: Wade Deng's Blog
 subtitle: move from cnblogs.com/no7dw
 description:
 author: Wade Deng
-language:
+language: zh-Hans
 timezone:
 
 # URL
@@ -63,7 +63,8 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: landscape
+#theme: landscape
+theme: next
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
