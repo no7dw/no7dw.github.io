@@ -1,4 +1,4 @@
-itle: what-to-consider-when-create-a-new-table
+title: what-to-consider-when-create-a-new-table
 date: 2016-01-29 23:54:18
 tags:
 ---
