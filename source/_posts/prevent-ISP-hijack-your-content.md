@@ -8,3 +8,5 @@ tags:
   -- 用https
   -- 用一个js，拿到他插的特点，根据DOM，页面加载完毕后将其屏蔽 hidden or delete
 
+投诉并没有卵用，并且不及时。
+
