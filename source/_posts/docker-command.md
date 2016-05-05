@@ -8,7 +8,7 @@ tags:
 
 ---
 
-###list images
+### list images
 
     dengwei@dengweis-MacBook-Pro:~$ docker images
     REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
@@ -17,7 +17,7 @@ tags:
     hello-world         latest              0a6ba66e537a        3 months ago        960 B
 
 
-###list containers
+### list containers
 
     dengwei@dengweis-MacBook-Pro:~$ docker ps -a
     CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                        PORTS                    NAMES
@@ -25,7 +25,7 @@ tags:
     c546c7e2122f        266834cd4285        "node"                   2 weeks ago         Exited (0) 2 weeks ago                                 cocky_mcnulty
     0e9b0475adc8        266834cd4285        "node"                   2 weeks ago         Exited (0) 2 weeks ago                                 dreamy_elion
 
-###run container
+### run container
 
     dengwei@dengweis-MacBook-Pro:~$ docker run -t -i e9ae3c220b23
     root@5dd4903c0fbb:/# ls   
@@ -38,20 +38,20 @@ tags:
     Hello from Docker.
     This message shows that your installation appears to be working correctly.
 
-###stop container
+### stop container
 
     dengwei@dengweis-MacBook-Pro:~$ docker stop c546c7e2122f  0e9b0475adc8 4ea492cb3de8
     c546c7e2122f
     0e9b0475adc8
 
 
-###exit container
+### exit container
 
     ctrl+D
     or
     root@5dd4903c0fbb:/# exit
 
-###search images
+### search images
 
     dengwei@dengweis-MacBook-Pro:~$ docker search node
     NAME                       DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
@@ -60,7 +60,7 @@ tags:
     strongloop/node            StrongLoop, Node.js, and tools.                 20                   [OK]
 
 
-###enter container
+### enter container
 
     $ docker exec -it <container id> /bin/bash
 

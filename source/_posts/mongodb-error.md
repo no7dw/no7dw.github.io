@@ -11,7 +11,7 @@ http://stackoverflow.com/questions/27023622/overflow-sort-stage-buffered-data-us
 
 there is a limit of sort in memory:32MB
 
-###solution:index the sort field
+### solution:index the sort field
 
 
 Indexing the sort field allows MongoDB to stream documents to you in sorted order, rather than attempting to load them all into memory on the server and sort them in memory before sending them to the client.

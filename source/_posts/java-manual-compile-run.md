@@ -24,14 +24,14 @@ Package/
                 └── Baby.java
             
 
-###compile & run            
+### compile & run            
     dengwei@dengweis-MacBook-Pro:~/project/github/javaCourse/Package$ javac Test.java && java Test
     My name is Wade
     1
 
 
 
-##case 2,class 直接在当前目录:
+## case 2,class 直接在当前目录:
 
     dengwei@dengweis-MacBook-Pro:~/project/github/javaCourse/Package2$ tree
     .
@@ -40,12 +40,12 @@ Package/
     ├── Test.class
     └── Test.java
 
-###compile & run   
+### compile & run   
 
     dengwei@dengweis-MacBook-Pro:~/project/github/javaCourse/Package2$ javac Test.java && java Test
     10
 
-##case 3, 交错目录:
+## case 3, 交错目录:
 
     dengwei@dengweis-MacBook-Pro:~/project/github/javaCourse/Package4$ tree
 .
@@ -88,7 +88,7 @@ Test.java:
         
     
 
-###注意坑
+### 注意坑
 classpath 多个classpath时， linux/Mac 下用:分割。貌似windows下用;分割。
 
 具体src 见：[javaCourse][1]

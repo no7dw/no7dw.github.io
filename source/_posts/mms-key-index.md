@@ -3,7 +3,7 @@ date: 2015-10-15 13:30:26
 tags:
 ---
 # MMS关键指标意义&各数值区间意义&部署
-##part 1 mms图
+## part 1 mms图
 ------
 ### What's MMS
 MongoDB Management Service (MMS) is a suite of services for managing MongoDB deployments.
