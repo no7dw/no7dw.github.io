@@ -26,7 +26,23 @@
  - log基于法律考虑要保留3年＋
 
 ####架构图参考：
-  点融：
+  点融逻辑架构：
+ ![点融逻辑架构][1]
+ 这张是非常典型的逻辑架构， 多个LB 分发到多个http server。再往后区分静态内容和session ，这些内容由NoSQL（mongodb or redis 之类）存储，静态内容前有缓存（varnish 之类）。有多个nodejs cluster 进行业务服务分发。
+ 还有非常重要的是背后的backup。备份机制需要多种（最好同时有）备份机制：
+ - slave实时备份
+ - 延时备份（防止实时污染）
+ - 远程实时备份
+ - x天内每小时备份
+ - x天内每天备份
+ 
+ 
+ 点融component架构：
+![component架构][2] 
+  这张非常设计具体业务了，但金融部分仍非常值得参考，如一些component:支付服务、审计服务、风险管理服务、权限管理服务、备份服务
+ 
+ 
+ 
  
 ####对账户模型
   对账，也可以成为清算。一般为了保证系统的数据的准确性，尤其是金额数据。
@@ -62,3 +78,7 @@ PayPalm支付文档
 支付宝文档
 支付宝架构
 点融网架构
+
+
+  [1]: http://7xk67t.com1.z0.glb.clouddn.com/app_view.png
+  [2]: http://7xk67t.com1.z0.glb.clouddn.com/component_view.png
