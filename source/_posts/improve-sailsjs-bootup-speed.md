@@ -9,7 +9,7 @@ tags:
 项目使用**sails.js** , 长期开发后，发现启动速度越来越慢。慢得像java 一样。每次修改要一点点，自动重启要等等等。。。。
 所以类似有人这么评价 [sails.js][1]
 
-###why? and how to improve it?
+### why? and how to improve it?
 
 sails-mongo 升级到 0.12.x .注意：1 update 只会返回id
 好的点：项目启动速度由30+sec , 升级到5+ sec

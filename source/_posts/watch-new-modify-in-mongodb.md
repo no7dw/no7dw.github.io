@@ -2,7 +2,7 @@ title: watch new modify in mongodb
 date: 2016-04-08 12:26:58
 tags:
 ---
-###需求：系统update 数据时，要记录原始数据&改动的数据。
+### 需求：系统update 数据时，要记录原始数据&改动的数据。
 类似jira 一样，知道改动前的原数据，改动后的数据
 
  - orm's hook: beforeupdate, afterupdate, 但是native的更新无法捕获

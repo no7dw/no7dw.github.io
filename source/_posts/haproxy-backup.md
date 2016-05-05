@@ -6,7 +6,7 @@ tags:
  ---
  平常haproxy 作为load balance ，还有一种稍特殊的情况：有个节点A，平时用作唯一的服务，但为了避免单点故障，节点B并不是作为其中一个balance 节点，而是充当A的备份－－－即当A 挂掉时，B顶替A作为唯一的服务存在。
  
-###simply config
+### simply config
 只需要在server 节点后面加 **backup**
 
     
