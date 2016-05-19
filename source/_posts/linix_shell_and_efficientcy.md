@@ -66,16 +66,27 @@
 
 
 ### option 
+#### case
+[case example][3]
+#### option
+getopt
+[opt example][4]
 
 ### help
 
 ### man
 
 ### path
+put your file to $PATH
 
-### use it to improve efficiency
+## use bash to improve efficiency
 
 ### alias
+[alias file][5]
+
+ - git
+ - find
+ - ...
 
 ### bin 
 
@@ -88,13 +99,20 @@
 ### fucksh zash
 
 ### tips
- 
+ 经常忘记sudo，快速根据上一个命令重新执行
 
     $apt-get install tree
     $sudo !!
+    
+写错命令，快速根据上一个命令的参数重新执行
+    
     klg@klgaliyun01:~$ vim /etc/init.d/haproxy 
     klg@klgaliyun01:~$ cat !$
     cat /etc/init.d/haproxy
+
+### 开机启动文件 /etc/rc.local
+
+### ~/.bash_profile ~/.bashrc
 
 ### mount to shared drive
 
@@ -108,7 +126,12 @@
     |
     
 ### 坑
-    空格：[ ] in if then else fi
+    空格：in if then else fi
+
+    if [ xx -lt 0 ];
+       ...
+    
+    空格：PID=123 ##not PID = 123 
     
 ### debug
 
@@ -119,9 +142,12 @@
     $ echo $?
     1
 
-[ref link][3]
+[ref link][6]
 
 
   [1]: http://www.cnblogs.com/chengmo/archive/2010/10/01/1839942.html
   [2]: http://www.cnblogs.com/no7dw/archive/2010/12/23/1915180.html
-  [3]: https://github.com/no7dw/linux-shell
+  [3]: https://github.com/no7dw/linux-shell/blob/master/case.sh
+  [4]: https://github.com/no7dw/linux-shell/blob/master/opt.sh
+  [5]: https://github.com/no7dw/linux-shell/blob/master/.bash_alias
+  [6]: https://github.com/no7dw/linux-shell
