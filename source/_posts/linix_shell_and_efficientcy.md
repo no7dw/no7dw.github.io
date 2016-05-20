@@ -21,7 +21,7 @@
     	usage
     fi
 
-[ref link][1]
+[逻辑表达式详解][1]
 
 
 ### input parameters
@@ -33,7 +33,7 @@
  - $@ 是传给脚本的所有参数的列表
 
 
-[ref link][2]
+[ref link][3]
     
     if [ $# -lt 1 ];then
             usage
@@ -67,10 +67,10 @@
 
 ### option 
 #### case
-[case example][3]
+[case 语法 github example][4]
 #### option
 getopt
-[opt example][4]
+[opt 语法 github example][5]
 
 ### help
 
@@ -82,10 +82,10 @@ put your file to $PATH
 ## use bash to improve efficiency
 
 ### alias
-[alias file][5]
+[alias file][6]
 
- - git
- - find
+ - git push origin/ ==> gpo
+ - find ./* -name ==> f "*.md"
  - ...
 
 ### bin 
@@ -126,12 +126,12 @@ put your file to $PATH
     |
     
 ### 坑
-    空格：in if then else fi
+    注意空格：in if then else fi
 
     if [ xx -lt 0 ];
        ...
     
-    空格：PID=123 ##not PID = 123 
+    还是注意空格：PID=123 ##not PID = 123 
     
 ### debug
 
@@ -142,12 +142,13 @@ put your file to $PATH
     $ echo $?
     1
 
-[ref link][6]
+[常用Linux shell 集合][7]
 
 
   [1]: http://www.cnblogs.com/chengmo/archive/2010/10/01/1839942.html
-  [2]: http://www.cnblogs.com/no7dw/archive/2010/12/23/1915180.html
-  [3]: https://github.com/no7dw/linux-shell/blob/master/case.sh
-  [4]: https://github.com/no7dw/linux-shell/blob/master/opt.sh
-  [5]: https://github.com/no7dw/linux-shell/blob/master/.bash_alias
-  [6]: https://github.com/no7dw/linux-shell
+  [2]: http://www.cnblogs.com/chengmo/archive/2010/10/01/1839942.html
+  [3]: http://www.cnblogs.com/no7dw/archive/2010/12/23/1915180.html
+  [4]: https://github.com/no7dw/linux-shell/blob/master/case.sh
+  [5]: https://github.com/no7dw/linux-shell/blob/master/opt.sh
+  [6]: https://github.com/no7dw/linux-shell/blob/master/.bash_alias
+  nux shell 集合i[7]: https://github.com/no7dw/linux-shell
