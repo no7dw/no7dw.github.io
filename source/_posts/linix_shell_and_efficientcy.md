@@ -33,7 +33,7 @@
  - $@ 是传给脚本的所有参数的列表
 
 
-[ref link][3]
+[ref link][2]
     
     if [ $# -lt 1 ];then
             usage
@@ -67,14 +67,34 @@
 
 ### option 
 #### case
-[case 语法 github example][4]
+
+	$haproxy status/stop/start/reload/restart
+	
+[case 语法 github example][3]
 #### option
 getopt
-[opt 语法 github example][5]
+
+	$SomeCommand -p 223  -h localhost
+[opt 语法 github example][4]
 
 ### help
-
+    定义 usage function, 处理-h --help
+    
 ### man
+
+    edit man page file ,then put it in :
+    /usr/share/man/man1
+    
+    $sudo cp sleep.sh /bin/sleep1
+    #see example 
+    $man 1 sleep1
+    
+    man 1/2/3/.. 7 的[差别][5]
+    
+    section 	topic
+	1	Executable programs or shell commands
+	2	System calls (functions provided by the kernel)
+	3	Library calls (functions within program libraries)
 
 ### path
 put your file to $PATH
@@ -82,7 +102,7 @@ put your file to $PATH
 ## use bash to improve efficiency
 
 ### alias
-[alias file][6]
+[alias file example][6]
 
  - git push origin/ ==> gpo
  - find ./* -name ==> f "*.md"
@@ -134,7 +154,9 @@ put your file to $PATH
     还是注意空格：PID=123 ##not PID = 123 
     
 ### debug
-
+	$bash -x xxx.sh
+	[debug example][7]
+	
 ### exit code
 
     $ ./sleep.sh 2 3
@@ -142,13 +164,14 @@ put your file to $PATH
     $ echo $?
     1
 
-[常用Linux shell 集合][7]
+[常用Linux shell 集合][8]
 
 
   [1]: http://www.cnblogs.com/chengmo/archive/2010/10/01/1839942.html
-  [2]: http://www.cnblogs.com/chengmo/archive/2010/10/01/1839942.html
-  [3]: http://www.cnblogs.com/no7dw/archive/2010/12/23/1915180.html
-  [4]: https://github.com/no7dw/linux-shell/blob/master/case.sh
-  [5]: https://github.com/no7dw/linux-shell/blob/master/opt.sh
+  [2]: http://www.cnblogs.com/no7dw/archive/2010/12/23/1915180.html
+  [3]: https://github.com/no7dw/linux-shell/blob/master/case.sh
+  [4]: https://github.com/no7dw/linux-shell/blob/master/opt.sh
+  [5]: http://www.computerhope.com/unix/uman.htm
   [6]: https://github.com/no7dw/linux-shell/blob/master/.bash_alias
-  nux shell 集合i[7]: https://github.com/no7dw/linux-shell
+  [7]: http://www.cnblogs.com/no7dw/p/3923657.html
+  [8]: https://github.com/no7dw/linux-shell
