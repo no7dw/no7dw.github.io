@@ -1,5 +1,5 @@
 # shell script
-
+## shell programming in x mins
 ### Hello World
 
     #!/bin/bash
@@ -62,18 +62,19 @@
 ### call from another script file
     直接输入绝对路径或者相对路径
     
-### .
+### . -- execute
 
+## part 2 going deep: Beauty/Standard
 
 ### option 
 #### case
-
+    case 实现效果：
 	$haproxy status/stop/start/reload/restart
 	
 [case 语法 github example][3]
 #### option
-getopt
 
+    getopt 实现效果：
 	$SomeCommand -p 223  -h localhost
 [opt 语法 github example][4]
 
@@ -81,7 +82,9 @@ getopt
     定义 usage function, 处理-h --help
     
 ### man
-
+    实现效果：
+    $man 1 sleep1
+    
     edit man page file ,then put it in :
     /usr/share/man/man1
     
@@ -96,10 +99,24 @@ getopt
 	2	System calls (functions provided by the kernel)
 	3	Library calls (functions within program libraries)
 
+	
+### exit code
+
+    $ ./sleep.sh 2 3
+    usage: sleep seconds
+    #上一个命令的执行效果,来自于shell script 文件的exit code
+    
+    $ echo $?
+    1
+    $ echo $?
+    0
+
+
 ### path
 put your file to $PATH
 
-## use bash to improve efficiency
+
+## part 3 going deep: use bash to improve efficiency
 
 ### alias
 [alias file example][6]
@@ -109,6 +126,10 @@ put your file to $PATH
  - ...
 
 ### bin 
+去扫以下各个文件夹：
+
+    $ echo $PATH
+    /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 ### path env
 
@@ -131,19 +152,40 @@ put your file to $PATH
     cat /etc/init.d/haproxy
 
 ### 开机启动文件 /etc/rc.local
+when system start , run this script	
 
 ### ~/.bash_profile ~/.bashrc
+when user login, run this script	
 
 ### mount to shared drive
 
-### UI Color
+### UI Color : make terminal more colorful, tell the diff between dir and file, the diff between execute and unexecute
 
-### copy paste
+	export CLICOLOR=1
+	export LSCOLORS=Exfxcxdxbxegedabagacad
+	# Tell grep to highlight matches
+	export GREP_OPTIONS='--color=auto'
+	export TERM="xterm-color"
+	PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\]\$ '
+
+
+### copy past without mousee
     pbcopy < somefile
     pbpaste > somefile_copy 
 
-### pipe line
-    |
+### pipe line and redirect
+    # pipe line
+    | # left output as right output
+    > >>  
+    < <<
+    2> #stderr redirect 
+    $somecommand >> file.out.log 2>1 & ## stderr redirect to stdout , then redirect to some file
+    $ ls x* z* 2>/dev/null  ##output redirect to device : /dev/null ## black hole, which means  ignore the output
+    
+    ![stdin stdout stderr][7]
+    [linux pipe line and redirect][8]
+    [IBM pipe line pdf][9]
+    
     
 ### 坑
     注意空格：in if then else fi
@@ -155,16 +197,9 @@ put your file to $PATH
     
 ### debug
 	$bash -x xxx.sh
-	[debug example][7]
-	
-### exit code
+	[debug example][10]
 
-    $ ./sleep.sh 2 3
-    usage: sleep seconds
-    $ echo $?
-    1
-
-[常用Linux shell 集合][8]
+[常用Linux shell 集合][11]
 
 
   [1]: http://www.cnblogs.com/chengmo/archive/2010/10/01/1839942.html
@@ -173,5 +208,8 @@ put your file to $PATH
   [4]: https://github.com/no7dw/linux-shell/blob/master/opt.sh
   [5]: http://www.computerhope.com/unix/uman.htm
   [6]: https://github.com/no7dw/linux-shell/blob/master/.bash_alias
-  [7]: http://www.cnblogs.com/no7dw/p/3923657.html
-  [8]: https://github.com/no7dw/linux-shell
+  [7]: http://ryanstutorials.net/linuxtutorial/img/streams.png
+  [8]: http://ryanstutorials.net/linuxtutorial/piping.php
+  [9]: http://www.ibm.com/developerworks/library/l-lpic1-v3-103-4/l-lpic1-v3-103-4-pdf.pdf
+  [10]: http://www.cnblogs.com/no7dw/p/3923657.html
+  [11]: https://github.com/no7dw/linux-shell
