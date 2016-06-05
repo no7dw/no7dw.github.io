@@ -81,5 +81,17 @@ so we need to change it into this:
     RUN mkdir -p /var/git/finance \
     && cd /var/git/finance \
 
+### network connection issue
+
+    $ docker run hello-world
+    Unable to find image 'hello-world:latest' locally
+    Pulling repository docker.io/library/hello-world
+    Network timed out while trying to connect to https://index.docker.io/v1/repositories/library/hello-world/images. You may want to check your internet connection or if you are behind a proxy.
+    bash-3.2$ 
+
+    //fix:
+    $ docker-machine restart default      # Restart the environment
+    $ eval $(docker-machine env default)  # Refresh your environment settings
+
   [1]: http://7xk67t.com1.z0.glb.clouddn.com/docker_running_config.png
 

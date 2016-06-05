@@ -1,4 +1,7 @@
-# shell script
+title: linux shell script
+date: 2016-05-15 12:33:10
+----
+
 ## shell programming in x mins
 ### Hello World
 
