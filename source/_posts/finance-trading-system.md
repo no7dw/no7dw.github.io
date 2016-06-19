@@ -47,6 +47,7 @@ But during we executing order,  client A  may cancel the order. This may cause o
 
 check for more about [security trading system at shenzhen][6]
 [trading rule of security trading system at shenzhen][7]
+[order matching principles][8]
 
 
   [1]: http://www.onestepremoved.com/wp-content/uploads/2013/08/limit-order-book-pretrade-1024x622.png
@@ -56,3 +57,4 @@ check for more about [security trading system at shenzhen][6]
   [5]: http://www.investopedia.com/university/intro-to-order-types/market-orders.asp
   [6]: http://www.szse.cn/
   [7]: http://www.szse.cn/UpFiles/largepdf/20160429091100.pdf
+  [8]: http://www.eurexchange.com/exchange-en/trading/market-model/matching-principles
