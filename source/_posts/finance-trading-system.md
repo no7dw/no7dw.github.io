@@ -46,6 +46,7 @@ so when complete executing these 3 orders, the buy order is complete 7 shares ,a
 But during we executing order,  client A  may cancel the order. This may cause order#2 complete, while order#3 is not.
 
 check for more about [security trading system at shenzhen][6]
+[trading rule of security trading system at shenzhen][7]
 
 
   [1]: http://www.onestepremoved.com/wp-content/uploads/2013/08/limit-order-book-pretrade-1024x622.png
@@ -54,3 +55,4 @@ check for more about [security trading system at shenzhen][6]
   [4]: http://www.investopedia.com/university/intro-to-order-types/limit-orders.asp
   [5]: http://www.investopedia.com/university/intro-to-order-types/market-orders.asp
   [6]: http://www.szse.cn/
+  [7]: http://www.szse.cn/UpFiles/largepdf/20160429091100.pdf
