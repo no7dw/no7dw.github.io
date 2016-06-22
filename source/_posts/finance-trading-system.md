@@ -20,7 +20,7 @@ In Software system, usually we'll store the bid and offer order info(price and s
 #### time
 
 Another important elements is **time**. For example at stock market : IBM current price is 19.90$ , the next tick is risen to 19.91$, or fallen to 19.89$.
-sinace we have data with time ,so visuial data may like this:
+since we have data with time ,so visuial data may looks like :
 ![ibm stock price in years][2]
 
 #### order 
@@ -37,15 +37,16 @@ When we match those order at some curtain price, the next task for system is exe
 Let's going a little deeper with an example. 
 Orders: 
 
- - 1 client A buy IBM at 20$ with 10 shares
- - 2 client B sell IBM at 20$ with 5 shares
- - 3 client C sell IBM at 20$ with 2 shares
+ - client A buy IBM at 20$ with 10 shares
+ - client B sell IBM at 20$ with 5 shares
+ - client C sell IBM at 20$ with 2 shares
 
 so when complete executing these 3 orders, the buy order is complete 7 shares ,and 3 shares left.
 
 But during we executing order,  client A  may cancel the order. This may cause order#2 complete, while order#3 is not.
 
-check for more about [security trading system at shenzhen][6]
+check for more about:
+[security trading system at shenzhen][6]
 [trading rule of security trading system at shenzhen][7]
 [order matching principles][8]
 
