@@ -1,8 +1,9 @@
-### git rollback
-
+title: git rollback
 date: 2016-06-23 09:42:34
 tags:
 ---
+### git rollback
+
 简单介绍线上的几种情况
 
  - 有最近一个可用的tag 
