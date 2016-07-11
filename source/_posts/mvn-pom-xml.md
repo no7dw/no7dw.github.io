@@ -2,7 +2,7 @@ title: mvn pom.xml
 date: 2016-03-27 22:01:47
 tags:
 ---
-# mvn 的 pom.xml
+# 从npm 角度理解 mvn 的 pom.xml
 
 pom -- project object model. 用于描述项目的配置：
 
@@ -51,6 +51,35 @@ dependency 里面的[主要信息][1]groupId, 相当与组织机构的项目组I
 tomcat/jetty 是一些mvn plugin. 
 [jetty 参考配置][2]
 所谓mvn plugin 可以理解成，这是使得可以集成与mvn 命令一起使用的插件。官方文档[参考][3]
+
+Also:
+mvn 可用编译，打包，安装，build项目
+
+  - 编译：(nodejs 里面没有这个--因动态语言)
+
+    mvn compile
+
+  - 打包：(nodejs 里面没有这个--因动态语言)
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.springframework</groupId>
+    <artifactId>gs-maven</artifactId>
+    <packaging>jar</packaging>
+    <version>0.1.0</version>
+
+ 运行mvn package 后，会产生 {$artifactId}-{$version}-jar,如上述的：gs-maven-0.1.0.jar （target 文件夹）
+
+  - 安装 (类似: npm install)
+
+    mvn install
+
+  - build (类似npm script 里面的自定义脚本: npm start )
+  根据plugin 输入参数构建，如上述的：
+
+    mvn jetty:run
+
+
+
 类似 npm clean , npm <command> ,see `npm --help`
 
 
