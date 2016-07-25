@@ -44,6 +44,9 @@ tags:
     c546c7e2122f
     0e9b0475adc8
 
+### after you stopped some container, you may now remove it
+
+    dengwei@dengweis-MacBook-Pro:~$ docker rmi c546c7e2122f
 
 ### exit container
 
@@ -67,7 +70,6 @@ tags:
 ### Print app output
 
     $ docker logs <container id>
-
 
 
 
