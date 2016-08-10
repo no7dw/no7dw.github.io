@@ -55,5 +55,31 @@ tags:
     ./right.go:14: c declared and not used  
 
 
+#### type struct init using () ,instead of {} ,which {} is the right usage
+    
+    type Response struct {
+      Code string `json:"code"`
+      Body string `json:"body"`
+    }
+    //not like this ()
+    //Response("OK", "ECHO: " + method + " ~ " + params)
+    //right usage {}
+    Response{"OK", "ECHO: " + method + " ~ " + params}
+
+
+#### 如何理解以下代码：
+    
+    type IpcClient struct {
+      conn chan string
+    }
+    func (client *IpcClient)Call(method, params string)(resp *Response, err error){
+      }
+
+  - (client *IpcClient) -- 调用的对象要是 IpcClient struct  
+  - (method, params string) -- 参数，前面是参数名，后面是参数类型，两种同类别省略写法。
+  - (resp *Response, err error) 参数返回值，返回值的第一个参数，类型为 Response struct 对象指针, 返回值的第二个参数，类型为 error 类型, 
+
+
+
 #### wrong not using go keyworld when call async func
 
