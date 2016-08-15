@@ -82,7 +82,15 @@ mvn 可用编译，打包，安装，build项目
 
 类似 npm clean , npm <command> ,see `npm --help`
 
+### speed it up
+
+  mvn 经常很慢，等很久都没完成。参考以下[链][3][接][4]
+  `mvn -T 4 install -- will use 4 threads`
+
+
 
   [1]: http://blog.csdn.net/zhuxinhua/article/details/5788546
   [2]: http://blog.csdn.net/ph9527/article/details/5063157
   [3]: https://maven.apache.org/plugins/index.html
+  [4]: http://zeroturnaround.com/rebellabs/your-maven-build-is-slow-speed-it-up/
+  [5]: http://stackoverflow.com/questions/161698/how-can-i-speed-up-my-maven2-build
