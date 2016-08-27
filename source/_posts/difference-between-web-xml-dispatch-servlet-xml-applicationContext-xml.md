@@ -85,6 +85,11 @@ dispatcher-servlet.xml 定义的bean 给一个叫dispatcher(可以是其他名�
 也即：dispatcher-servlet.xml 可以引用applicationContext.xml 定义 context。但反之不行
 
 
+### 吐槽：
+这么多xml 真的挺烦的，而且还有pom.xml。而且xml 都是比较冗长，使用习惯了其他如nodejs的动态语言，写起来会真的对这些冗长的配置很恼火。
+对于pom.xml, gradle 可以稍微释放 xml
+对于上述这么多xml，spring-boot (https://spring.io/guides/gs/spring-boot/) 可以释放 这些这么多配置的问题。尤其在：我只不过是想写个简单的rest、单一职责的微服务而已。
+
     
 参考：Spring - MVC Framework Tutorial(http://www.tutorialspoint.com/spring/spring_web_mvc_framework.htm)
 spring mvc architecture(http://www.slideshare.net/RaviKantSoni2/spring-framework-3-session1)
