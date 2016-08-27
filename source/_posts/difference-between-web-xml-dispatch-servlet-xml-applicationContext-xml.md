@@ -4,8 +4,8 @@ tags:
 ---
 ### spring mvc 为什么这么多xml
 
-spring web mvc 处理流程(http://www.tutorialspoint.com/spring/images/spring_dispatcherservlet.png)
-architecture(http://image.slidesharecdn.com/springframework3sesson1-130626021549-phpapp02/95/spring-mvc-30-framework-8-638.jpg?cb=1375097058)
+spring web mvc 处理流程![enter image description here](http://www.tutorialspoint.com/spring/images/spring_dispatcherservlet.png)
+Architecture ![enter image description here](http://image.slidesharecdn.com/springframework3sesson1-130626021549-phpapp02/95/spring-mvc-30-framework-8-638.jpg?cb=1375097058)
 
 ### web.xml (webapp必要配置)
 
@@ -81,14 +81,14 @@ dispatcher-servlet.xml 与 applicationContext.xml 的差别：
 共同：两者对webapp 其实都是非必须
 applicationContext.xml 定义bean 的 root webapp context
 dispatcher-servlet.xml 定义的bean 给一个叫dispatcher(可以是其他名字)的 webapp context
-据说(http://stackoverflow.com/questions/3652090/difference-between-applicationcontext-xml-and-spring-servlet-xml-in-spring-frame): 普通webapp context 可以引用 root webapp context
+[据说](http://stackoverflow.com/questions/3652090/difference-between-applicationcontext-xml-and-spring-servlet-xml-in-spring-frame) 普通webapp context 可以引用 root webapp context
 也即：dispatcher-servlet.xml 可以引用applicationContext.xml 定义 context。但反之不行
 
 
 ### 吐槽：
 这么多xml 真的挺烦的，而且还有pom.xml。而且xml 都是比较冗长，使用习惯了其他如nodejs的动态语言，写起来会真的对这些冗长的配置很恼火。
 对于pom.xml, gradle 可以稍微释放 xml
-对于上述这么多xml，spring-boot (https://spring.io/guides/gs/spring-boot/) 可以释放 这些这么多配置的问题。尤其在：我只不过是想写个简单的rest、单一职责的微服务而已。
+对于上述这么多xml，[spring-boot](https://spring.io/guides/gs/spring-boot) 可以释放 这些这么多配置的问题。尤其在：我只不过是想写个简单的rest、单一职责的微服务而已。
 
     
 参考：Spring - MVC Framework Tutorial(http://www.tutorialspoint.com/spring/spring_web_mvc_framework.htm)
@@ -97,6 +97,7 @@ Spring的web.xml配置
 (http://book.51cto.com/art/200909/151039.htm)
 explain dispatcher-servlet.xml, applicationContext.xml, web.xml (https://www.quora.com/How-will-you-explain-dispatcher-servlet-xml-applicationContext-xml-web-xml-and-spring-servlet-xml-to-a-NOVICE-J2EE-Java-programmer-and-relationship-between-these-xmls-in-a-Spring-Web-App)
 difference between ApplicationContext and WebApplicationContext (http://stackoverflow.com/questions/11708967/what-is-the-difference-between-applicationcontext-and-webapplicationcontext-in-s)
+
 
 
 
