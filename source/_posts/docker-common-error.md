@@ -93,5 +93,24 @@ so we need to change it into this:
     $ docker-machine restart default      # Restart the environment
     $ eval $(docker-machine env default)  # Refresh your environment settings
 
+### [Cannot connect to the Docker daemon. Is the docker daemon running on this host?](http://stackoverflow.com/questions/21871479/docker-cant-connect-to-docker-daemon) 
+
+    Linux:
+
+    From Create a Docker group section it is neccesary add user to docker group:
+
+    sudo usermod -aG docker $(whoami)
+    Log out and log back in. This ensures your user is running with the correct permissions.
+
+    In Mac OSX:
+
+    As Dayel Ostraco says is necessary to add environments variables:
+
+    $ docker-machine start # start virtual machine for docker
+    $ docker-machine env  # it's helps to get environment variables
+    $ eval "$(docker-machine env default)" #set environment variables
+    The docker-machine start outputs the comments to guide the process.
+
+
   [1]: http://7xk67t.com1.z0.glb.clouddn.com/docker_running_config.png
 
