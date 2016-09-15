@@ -47,7 +47,7 @@ dependency 里面的[主要信息][1]groupId, 相当与组织机构的项目组I
 安装elipse , maven plugin， 打开 pom.xml , 选择 dependencies, 选择 Add, 直接在search 处，输入你的package name， 会列出搜索结果，自动使用 latest version。当然也可以展开细节list指定某个特定的version。
 
 [trouble sovling when mvn search not working](http://stackoverflow.com/questions/14059685/eclipse-maven-search-dependencies-doesnt-work#_=_)
-
+[reindex maven project with Eclipse](https://books.sonatype.com/m2eclipse-book/reference/repository-sect-repo-view.html)
 
 
     mvn tomcat:run 
