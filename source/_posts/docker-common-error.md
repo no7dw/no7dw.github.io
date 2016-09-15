@@ -112,5 +112,11 @@ so we need to change it into this:
     The docker-machine start outputs the comments to guide the process.
 
 
+### docker top command error: TERM environment variable not set.
+
+    echo "export TERM=dumb" >> ~/.bashrc
+
+ [ref](https://github.com/dockerfile/mariadb/issues/3)
+
   [1]: http://7xk67t.com1.z0.glb.clouddn.com/docker_running_config.png
 
