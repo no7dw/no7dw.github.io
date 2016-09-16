@@ -90,6 +90,12 @@ dispatcher-servlet.xml 定义的bean 给一个叫dispatcher(可以是其他名�
 对于pom.xml, gradle 可以稍微释放 xml
 对于上述这么多xml，[spring-boot](https://spring.io/guides/gs/spring-boot) 可以释放 这些这么多配置的问题。尤其在：我只不过是想写个简单的rest、单一职责的微服务而已。
 
+另外一方面，这么多xml，IDE是有工具去做简化这些工作的。譬如：
+ - pom.xml 的下载管理是可以通过IDE dependencies tab -> Add 去搜做的。
+ - Spring Bean configuration file(beans.xml)是可以通过IDE beans tab -> New Bean 去配置的。
+
+然而还是觉得比较麻烦。。。
+
     
 参考：Spring - MVC Framework Tutorial(http://www.tutorialspoint.com/spring/spring_web_mvc_framework.htm)
 spring mvc architecture(http://www.slideshare.net/RaviKantSoni2/spring-framework-3-session1)
