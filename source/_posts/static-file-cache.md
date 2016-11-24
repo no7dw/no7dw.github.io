@@ -53,8 +53,8 @@ when js/css/html change:
     Gated Launch
     
 refer:
-    - http://www.cnblogs.com/lyzg/p/5125934.html
-    - https://www.zhihu.com/question/20790576
+    - [浏览器缓存知识小结及应用-](http://www.cnblogs.com/lyzg/p/5125934.html)
+    - [大公司里怎样开发和部署前端代码](https://www.zhihu.com/question/20790576)
     
     
 
