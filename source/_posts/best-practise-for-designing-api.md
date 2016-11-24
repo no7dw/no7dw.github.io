@@ -1,18 +1,24 @@
-title: best practise for designing api
+title: best practices for designing  web api
 date: 2016-11-24 19:21:07
 tags:
 ---
-# best practise for designing api
+# best practices for designing web api
 
 ### restful
 why:
  - meaningful
+This will be improve efficiency , less documents , just read the code 
  - auto generate support
- - auto test support
+Resource can be achieve automatically without writing any code  according to the data model or (java) repository 
  - DRY 
+It becomes unnecessary to think about what's good web url for providing api to the client developer --- Just following the standard
 
-### repeatable
-request many time should response the same
+### related resource
+example get the portfolios of 90 days of use id 123 :
+>  http://www.example.com/user/123/portfolios/90 
+
+also another :
+>  http://www.example.com/apidoc/201607/docid/98
 
 ### use standard http status code
 standard without extra documents, we should return http status code according to [the standard](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
@@ -31,16 +37,16 @@ useful http status code we should know:
 **when a POST request  post succeed, but no new result generated, we should return 200 , instead of 201**
 
 ### security
- - with authentication
- - with token
+ - with authentication :
+ Many of the request should first logged in to get the access token in order to have the  permission to access resources. Usually  we have several simple ways to carry the token in the request body :
+   - within the http header
+   - within the cookies 
+   - within the url : http://www.example.com/user/123?token=a12dc5
  - with hash
-
-### safety
-prevent DOS/DDOS , limit speed
-
-### logging
- - support debug
- - support statistics 
+Another way to keep the web request safe is to use hash code the encrypt the web parameters , example:  http://www.example.com/user/123/order/541?amount=100&product=wade&hash=d328af;
+hash the parameters : amount=100&product=wade  
+**besides , usually the parameters is sorted by alphabet**
+ 
 
 ### error standard
  should support http status code 、error code 、error msg
@@ -55,7 +61,21 @@ prevent DOS/DDOS , limit speed
 
    }
 ```
+### dig into well know company api example
+[mouseflow](https://api-docs.mouseflow.com/?shell#update-website-details) 
+update a new website 
+
+> PUT /websites/{website-id}
+
+```
+curl -X PUT -u my@email.com:token1234 -d '{"name": "myshop2.com", "recordingRate": 2}' https://api-us.mouseflow.com/websites/{website-id}
+```
+simple [prosper api](https://developers.prosper.com/docs/investor/accounts-api/)
+
+> https://developers.prosper.com/docs/investor/accounts-api/
+**Authorization is in header** -- which help us to  which one is operating user
 
 ### ref
 [best practices for a pragmatic restful api](http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api)
 [API 杂谈](http://36kr.com/p/5049025.html)
+
