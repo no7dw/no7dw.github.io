@@ -35,3 +35,4 @@ prevent DOS/DDOS , limit speed
 
 ### ref
 [best practices for a pragmatic restful api](http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api)
+[API 杂谈](http://36kr.com/p/5049025.html)
