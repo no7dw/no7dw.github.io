@@ -43,8 +43,17 @@ DNS Load balancer + LVS/Keepalived + Load balancer (nginx/haproxy) + varnish + x
 db 繁忙，需要拆分单个db 到多个业务db
 DNS Load balancer + LVS/Keepalived + Load balancer (nginx/haproxy) + varnish + x Node + redis + DB集群(order) + DB集群(user) + DB集群(other)
 
+db压力减少，解决：
+
+ - 使用集群
+ - 拆分业务
+ - 拆分实时要求、离线要求
+ - 读写分离
+ - 使用Hadoop 等技术提高数据的处理能力
+ - 利用NoSQL减少跨表的查询
 
 整体总结：
+
  - 大部分稳定性问题都是通过冗余在解决单点问题
  - 通过前置缓存来分担应用、db的压力
  - 通过分担机器压力解决单台机器的压力
@@ -53,9 +62,25 @@ DNS Load balancer + LVS/Keepalived + Load balancer (nginx/haproxy) + varnish + x
 our current status:
 ![current architeture][5] 
 根据业务量情况，支撑目前是大约压力测试结果：
- - 600 RPS 
+
+ - 300 RPS （涉及db）
  - 3K同时在线
 机器4台ECS(4Core 8G) 比较稳定，<20% cpu 占用。
+线下hadoop集群的离线处理未添加在图中。
+
+整个过程是不断演变的，当前状态还没有完。
+
+### 版本发布：
+多台机器的时候，逐个发布已经比较麻烦了，解决：
+
+ - jenkins + 脚本，集成一键发布
+ - jenkins + docker
+
+
+### 利用缓存改善网站性能
+web 永远是“缓存为王”
+ELK 的统计数据显示请求，70%的request 都是请求静态资源，解决参考 [static file caching][6]
+
 
 
 
@@ -70,3 +95,4 @@ ref:
   [3]: http://7xk67t.com1.z0.glb.clouddn.com/architecture-2.jpeg
   [4]: http://7xk67t.com1.z0.glb.clouddn.com/architecture-3.jpeg
   [5]: http://7xk67t.com1.z0.glb.clouddn.com/architecture.jpeg
+  [6]: http://www.deng.io/2016/11/14/static-file-cache/
