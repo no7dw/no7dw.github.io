@@ -5,6 +5,14 @@ tags:
 
 ### lesser if else
 
+
+### most easy
+  use Ternary: 
+
+  ```
+  var result = condiction? trueResult : falseResult;  
+  ```
+
 ### use switch
 
 ###  in static type language
@@ -49,7 +57,7 @@ tags:
 
 in dynamic lange, your choice become something different and sometimes difficult
 
- - use array or key-value
+ - use array 
   
 ```
   //usage:
@@ -66,7 +74,21 @@ in dynamic lange, your choice become something different and sometimes difficult
 
 ```
 
+  - use key-value json
 
+  ```
+  SonClass.prototype.doSomething(actionName){
+    var do = {
+      'cry' :{ console.log('cry');}
+      'eat' :{ console.log('eat');}
+    }
+    return do(actionName);
+  }
+  ```
+
+However , sometime reading a few if else statements is easy.
 
 ### ref
 [anti-if-else-patterns]（http://www.techug.com/anti-if-the-missing-patterns）  
+[no more ifs alternatives](https://javascriptweblog.wordpress.com/2010/07/26/no-more-ifs-alternatives-to-statement-branching-in-javascript/)
+[anti-anti-if](https://8thlight.com/blog/wai-lee-chin-feman/2013/08/11/anti-anti-if.html)
