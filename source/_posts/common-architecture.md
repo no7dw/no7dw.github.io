@@ -51,6 +51,19 @@ db压力减少，解决：
  - 读写分离
  - 使用Hadoop 等技术提高数据的处理能力
  - 利用NoSQL减少跨表的查询
+ - 单个disk 压榨完后，还可以继续分区、分表、分片
+
+### 版本发布：
+多台机器的时候，逐个发布已经比较麻烦了，解决：
+
+ - jenkins + 脚本，集成一键发布
+ - jenkins + docker
+
+
+### 利用缓存改善网站性能
+web 永远是“缓存为王”
+ELK 的统计数据显示请求，70%的request 都是请求静态资源，解决参考 [static file caching][6]
+
 
 整体总结：
 
@@ -68,20 +81,7 @@ our current status:
 机器4台ECS(4Core 8G) 比较稳定，<20% cpu 占用。
 线下hadoop集群的离线处理未添加在图中。
 
-整个过程是不断演变的，当前状态还没有完。
-
-### 版本发布：
-多台机器的时候，逐个发布已经比较麻烦了，解决：
-
- - jenkins + 脚本，集成一键发布
- - jenkins + docker
-
-
-### 利用缓存改善网站性能
-web 永远是“缓存为王”
-ELK 的统计数据显示请求，70%的request 都是请求静态资源，解决参考 [static file caching][6]
-
-
+整个过程是不断演变的，当前状态还没有完，每一个都是可以继续深入优化的。
 
 
 ref:
@@ -96,3 +96,5 @@ ref:
   [4]: http://7xk67t.com1.z0.glb.clouddn.com/architecture-3.jpeg
   [5]: http://7xk67t.com1.z0.glb.clouddn.com/architecture.jpeg
   [6]: http://www.deng.io/2016/11/14/static-file-cache/
+
+  

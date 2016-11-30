@@ -8,10 +8,36 @@ tags:
 ### use switch
 
 ###  in static type language
+
  - use heritance
+
+  usage (c++):
+
+  ```
+    SonClasss son = new FatherClass()
+    son.doSomething()
+
+  ```
+
+  in Son class
+
+  ```
+    protected void doSomething(){
+      //here override the FatherClass implement
+      print("I did something different from my father");
+    }
+  ```
+
+
  - use polypeptide
 
+
 ### in dynamic type language
+
+  also: you can use heritance way 
+
+in dynamic lange, your choice become something different and sometimes difficult
+
  - use array
  - use key-value
  - class desingn
