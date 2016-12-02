@@ -15,7 +15,7 @@ tags:
 
 extra 注意事项:
  - 有hyperlink to company、代表作 
- - 格式pdf ，请关心哪些不用windows的用户
+ - 格式pdf ，请关心那些不用windows的用户
  - 只有1-2 page，多了不会有人问、有人看
 
 末尾附上[自己的CV][2]
