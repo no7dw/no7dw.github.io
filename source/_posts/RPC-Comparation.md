@@ -6,17 +6,19 @@ tags:
 
 [别人的][1]REST SOAP Thrift对比：
 
-                REST        SOAP    Thrift
-Extensibility   ☆☆☆☆☆     ☆☆☆      ☆
-Neutrality      ☆☆       ☆☆☆☆     ☆☆☆
-Independence    ☆        ☆☆☆      ☆☆☆☆
-Large Data Handling      ☆        ☆☆☆☆☆   ☆☆☆
-Scalability     ☆☆☆☆     ☆☆       ☆☆☆☆☆
-Portability     ☆☆☆      ☆        ☆☆☆☆
-Simplicity      ☆☆☆      ☆☆       ☆☆☆☆☆
-Speed   ☆☆☆     ☆        ☆☆☆☆☆ 
-Evolution       ☆☆       ☆        ☆☆☆☆☆
+单项分数越高越好
 
+| 项目        | REST   |  SOAP  | Thrift|
+| --------   | -----:  | ----:  | ----:|
+| Extensibility     | 5 |   3     | 1|
+| Neutrality        |   2   |   4   | 3|
+| Independence        |    1    |  3  | 4|
+| Large Data Handling    | 1 |   5   | 3|
+| Scalability        |   4   |   2   | 5|
+| Portability        |    3    |  1  | 4|
+| Simplicity     | 3 |   2     | 5|
+| Speed        |   3   |   1   | 5|
+| Evolution        |    2    |  1  | 5|
 
 简单总结：
 
