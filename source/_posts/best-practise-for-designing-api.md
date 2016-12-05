@@ -46,7 +46,41 @@ useful http status code we should know:
 Another way to keep the web request safe is to use hash code the encrypt the web parameters , example:  http://www.example.com/user/123/order/541?amount=100&product=wade&hash=d328af;
 hash the parameters : amount=100&product=wade  
 **besides , usually the parameters is sorted by alphabet**
+
+To avoid **middle man problem**, we should use https.
  
+### standard Oauth 2.0 example
+
+[prosper oauth flow](https://developers.prosper.com/docs/authenticating-with-oauth-2-0/authorization-key-flow/)
+simple we should do :
+  - register to get client id and client secrect
+  - app granted by the user to get a auth_key according to user's grant permission
+  - now we can access the api via the access token and refresh token, both of which get an expire time
+  - if token has expired , we need to re-access the api
+
+request example:
+
+```
+  POST <prosper_base_address>/security/oauth/token
+   Accept: application/json
+   Content-type: application/x-www-form-urlencoded
+
+  grant_type=refresh_token&client_id=<your_client_id>&client_secret=<your_client_secret>&refresh_token=<existing_refresh_token_from_user_token_request>
+```
+
+response example:
+
+```
+{
+   "access_token": "5098afd7-f216",
+   "token_type": "bearer",
+   "refresh_token": "7fcb8a8a-e7dd",
+   "expires_in": 3599
+}
+```
+
+
+Note that:  
 
 ### error standard
  should support http status code 、error code 、error msg
