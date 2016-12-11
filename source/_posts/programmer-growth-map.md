@@ -39,6 +39,14 @@ tags:
   - Know how and why in both business and tech
   - Challenge yourself and others ,often ask why and chase for a better way
 
+### Growth Hacker
+ - Business Expert & Senior  Developer & Math Statistics
+ - Live with data
+ - Ab test
+ -  **Have the guts Deciding not to do**
+ -  Always providing idea or better ideas
+ -  Good at script programming
+ - Good at tools to improve efficiency
 
 
 ### Manager / Leader
@@ -56,6 +64,9 @@ tags:
  - Lead team work for the same direction
  - Problem solver
  - Always self driving & encouraging 
+ - Focus on people, Culture
+ - Good at Risk management, Planning 
+ - Deem projects as business (ROI)
  - keep coding and commit to the side parts of the projects
  
 
@@ -64,8 +75,9 @@ tags:
 **The best way to get it is to teach it**
  - Learn by Doing
  - Learn by Following a master
- - Learn by Improving
+ - Learn by Improving, Research
  - Learn by Teaching (less input , **more output**)
+ - Little Yellow Duck
  - Write your side projects
  - Keep blogging / taking notes/ summary 
  - Keep doing the above.
