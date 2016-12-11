@@ -69,6 +69,8 @@ tags:
  - Deem projects as business (ROI)
  - keep coding and commit to the side parts of the projects
  
+### CEO
+ not that yet, TBC
 
 ### how to reach the top in a quicker way
 
