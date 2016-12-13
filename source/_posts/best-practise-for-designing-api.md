@@ -1,9 +1,10 @@
 title: best practices for designing  web api
 date: 2016-11-24 19:21:07
 tags:
+
 ---
 # best practices for designing web api
-
+![design rest](https://betimdrenica.files.wordpress.com/2015/03/api2.png)
 ### restful
 why:
  - meaningful
@@ -109,7 +110,30 @@ simple [prosper api](https://developers.prosper.com/docs/investor/accounts-api/)
 > https://developers.prosper.com/docs/investor/accounts-api/
 **Authorization is in header** -- which help us to  which one is operating user
 
+### Version
+
+There way to represent version:
+
+ - /api/v1/user 
+
+ - /api/user?version=v1
+
+ - /api/user with req.header set 
+  
+  `version=v1`
+
+**`/api/v1/user` is better** for Load balancer to reganize 
+
+And **`/api/v1/user` is better** for rest api rather than `/api/user?version=v1` , which will be use as a query: 
+  `version=v1`
+
+At last **`/api/v1/user` is simpler** compare with set to req.header
+
+
 ### ref
 [best practices for a pragmatic restful api](http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api)
 [API 杂谈](http://36kr.com/p/5049025.html)
+[rest api design](https://betimdrenica.wordpress.com/2015/03/09/ideal-rest-api-design/)
+[best api design ](http://www.slideshare.net/SpencerSchneidenbach/restful-api-design-best-practices-using-aspnet-web-api)
+
 

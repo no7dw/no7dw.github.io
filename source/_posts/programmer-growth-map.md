@@ -3,7 +3,7 @@ date: 2016-12-11 23:35:10
 tags:
 ---
 
-### programmer growth map
+## programmer growth map
 
   common seen path
   ![common path](https://www.ctl.io/developers/assets/images/blog/career-path-diagram.png)
@@ -115,7 +115,7 @@ Agile experience needed
 ### CEO
  not that yet, TBC
 
-### how to reach the top in a quicker way
+## how to reach the top in a quicker way
 
 **The best way to get it is to teach it**
 ![teach it](https://i2.wp.com/www.keytokorean.com/wp-content/uploads/2013/09/einstein-explain-simply.jpg)
