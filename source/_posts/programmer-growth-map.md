@@ -40,7 +40,8 @@ tags:
   - Challenge yourself and others ,often ask why and chase for a better way
 
 ### Growth Hacker
- - Business Expert & Senior  Developer & Math Statistics
+![growth hacker](http://duraid.me/blog/wp-content/uploads/2014/12/growth-hacker-mix.png)
+ - Business Expert & Senior  Developer & Data Analysis 
  - Live with data
  - Ab test
  -  **Have the guts Deciding not to do**
@@ -48,6 +49,20 @@ tags:
  -  Good at script programming
  - Good at tools to improve efficiency
 
+[ the skill of growth hacker](http://duraid.me/blog/part-2-growth-hacker-profile/) 
+A growth hacker should be familiar with or have a background in as many of these categories as possible:
+
+
+ - Product Management
+ - Advertising, SEM
+ - Usability
+ - Viral Marketing
+ - SEO
+ - Coding, Databases & SQL
+ - Web design & UX
+ - Copywriting
+ - Analytics
+ - Email marketing
 
 ### Manager / Leader
 
@@ -75,6 +90,7 @@ tags:
 ### how to reach the top in a quicker way
 
 **The best way to get it is to teach it**
+![teach it](https://i2.wp.com/www.keytokorean.com/wp-content/uploads/2013/09/einstein-explain-simply.jpg)
  - Learn by Doing
  - Learn by Following a master
  - Learn by Improving, Research
@@ -85,7 +101,7 @@ tags:
  - Keep doing the above.
 
 ### Conclusion
-**Senior leaders are never born naturally. They are made. It takes practice to be good about it. **
+**Senior leaders are never born naturally. They are made（骨干是折腾出来的）. It takes practice to be good about it. **
 
 [career path of a programmer](https://www.ctl.io/developers/blog/post/career-path-of-a-programmer/)
-
+[If you want to Learn something, Teach it](http://keytokorean.com/blog/motivation/if-you-want-to-learn-something-teach-it/)
