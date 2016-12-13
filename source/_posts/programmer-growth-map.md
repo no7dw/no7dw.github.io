@@ -75,8 +75,16 @@ Skillset Cover:
 Why -- [Is it better to be a full-stack developer?](https://www.sitepoint.com/full-stack-developer/)
 It’s more about having an **understanding in each of the areas above, to communicate intelligently between team members** and to be a good asset if the situation needs it.
 
+### Devops: Dev + Ops 
+Similar to fullstack,  it means some skillset of different field -- especially in CI/CD
+![skillset](https://www.redhat.com/cms/managed-files/diagram-devops-opensource-900x450.png)
+
+in today's cutting edge tech, simply can work with such skillset by the help of **IaaS** :
+![docker and CI/CD](http://www.relevancelab.com/RLCatalyst/assets/img/catalyst/containers-devops.png)
+
 
 ### Manager / Leader
+[It's more that Senior Developer, which need more about soft skill](http://www.pmexamsmartnotes.com/11-essential-soft-skills-required-for-a-project-manager/)
 
   - A good team player
   - Good  GTD skill
@@ -84,9 +92,14 @@ It’s more about having an **understanding in each of the areas above, to commu
   - Leadership: good at bring all developer together to divide and conquer 
   - Very good at communication to all people(upper & peer & subordinate) and understanding
   - Extroverts is preferred
- 
+  - Agile skill
+  
+![soft skillset](https://leadershipchamps.files.wordpress.com/2013/04/pms-essential-soft-skills.jpg)
+Agile experience needed
+![software traditional problem](http://jancology.com/blog/archives/software-project.gif)
 
 ### Senior Leader / CTO
+![CTO](http://7xk67t.com1.z0.glb.clouddn.com/cto.jpeg)
  - Same skill as Manager / Leader
  - Lead team work for the same direction
  - Problem solver
@@ -95,6 +108,7 @@ It’s more about having an **understanding in each of the areas above, to commu
  - Good at Risk management, Planning 
  - Deem projects as business (ROI)
  - keep coding and commit to the side parts of the projects
+ 
  
 ### CEO
  not that yet, TBC
