@@ -23,14 +23,6 @@ tags:
  - Capable in writing every part of an app
  - Fast learning skill to get things done
 
-### Architect
-![architect as master craftsman](http://image.slidesharecdn.com/practicesofgoodsoftwarearchitects-1-120626135324-phpapp02/95/practices-of-good-software-architects-24-728.jpg?cb=1340718988)
- - 7-10+ Years of Experience
- - Same program skills as a Senior Developer
- - know more than 2 or 3 program languages and tech stacks 
- - Deep understanding of  Network, Ops,  and the whole computer system
- - Have great experience in handling high concurrency & high stability service  
- 
 
 ###  Business Expert
 
@@ -82,6 +74,15 @@ Similar to fullstack,  it means some skillset of different field -- especially i
 in today's cutting edge tech, simply can work with such skillset by the help of **IaaS** :
 ![docker and CI/CD](http://www.relevancelab.com/RLCatalyst/assets/img/catalyst/containers-devops.png)
 
+
+### Architect
+![architect as master craftsman](http://image.slidesharecdn.com/practicesofgoodsoftwarearchitects-1-120626135324-phpapp02/95/practices-of-good-software-architects-24-728.jpg?cb=1340718988)
+ - 7-10+ Years of Experience
+ - Same program skills as a Senior Developer
+ - know more than 2 or 3 program languages and tech stacks 
+ - Deep understanding of  Network, Ops,  and the whole computer system
+ - Have great experience in handling high concurrency & high stability service  
+ 
 
 ### Manager / Leader
 [It's more that Senior Developer, which need more about soft skill](http://www.pmexamsmartnotes.com/11-essential-soft-skills-required-for-a-project-manager/)
