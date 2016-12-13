@@ -65,6 +65,17 @@ A growth hacker should be familiar with or have a background in as many of these
  - Analitycs
  - Email marketing
 
+### Fullstack Developer
+[full-stack-developer](https://www.sitepoint.com/full-stack-developer/)
+Field Cover:
+![cover](https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2014/08/1409261668002.png)
+Skillset Cover:
+![tech cover](https://media.licdn.com/mpr/mpr/AAEAAQAAAAAAAAX_AAAAJGZiMDFhNzkxLWE1NWMtNGI4OS1iNTY3LTZhNWY3NTg1YjI5Yw.png)
+[What's a fullstack developer?](http://www.laurencegellert.com/2012/08/what-is-a-full-stack-developer/)
+Why -- [Is it better to be a full-stack developer?](https://www.sitepoint.com/full-stack-developer/)
+It’s more about having an **understanding in each of the areas above, to communicate intelligently between team members** and to be a good asset if the situation needs it.
+
+
 ### Manager / Leader
 
   - A good team player
