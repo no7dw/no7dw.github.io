@@ -108,7 +108,8 @@ Agile experience needed
  - Good at Risk management, Planning 
  - Deem projects as business (ROI)
  - keep coding and commit to the side parts of the projects
- 
+ ![11](https://christopherjcoleman.files.wordpress.com/2012/12/ctoandcio1.gif?w=1500&h=1040)
+ [CTO skillset required  from quota](https://www.quora.com/What-are-skills-required-to-become-a-CTO)
  
 ### CEO
  not that yet, TBC
