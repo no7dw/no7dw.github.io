@@ -24,6 +24,7 @@ tags:
  - Fast learning skill to get things done
 
 ### Architect
+![architect as master craftsman](http://image.slidesharecdn.com/practicesofgoodsoftwarearchitects-1-120626135324-phpapp02/95/practices-of-good-software-architects-24-728.jpg?cb=1340718988)
  - 7-10+ Years of Experience
  - Same program skills as a Senior Developer
  - know more than 2 or 3 program languages and tech stacks 
@@ -61,7 +62,7 @@ A growth hacker should be familiar with or have a background in as many of these
  - Coding, Databases & SQL
  - Web design & UX
  - Copywriting
- - Analytics
+ - Analitycs
  - Email marketing
 
 ### Manager / Leader
