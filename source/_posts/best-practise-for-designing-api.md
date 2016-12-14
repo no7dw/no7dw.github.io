@@ -4,8 +4,11 @@ tags:
 
 ---
 # best practices for designing web api
+
 ![design rest](https://betimdrenica.files.wordpress.com/2015/03/api2.png)
+
 ### restful
+
 why:
  - meaningful
 This will be improve efficiency , less documents , just read the code 
