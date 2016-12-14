@@ -17,5 +17,8 @@ tags:
 
 ![ROI in user story](https://www.scrumalliance.org/system/resource_files/0000/3685/liip1.JPG)
 
+ business value is some kind of like poker number, range 0~100
+ sometime it's difficult in estimate this value , because user story are different type: some might improve efficency , other may develop activities for new/old user, some might improve rate
+
 ### 经验总结
 TBD
