@@ -26,11 +26,20 @@ tags:
 
 ###  Business Expert
 
+work close on product:
+![working field](http://www.intelligenthq.com/wp-content/uploads/2015/09/business-expert.jpg)
+
+watch close on data:
+
+![ga](https://www.cloudflare.com/img/apps/google-analytics/google-analytics-example.png)
+
+
   - Almost same program skills as a Senior Developer 
   - Very good at communication and understanding
   - Deep understanding of  the lifecycle of an app
   - Know how and why in both business and tech
   - Challenge yourself and others ,often ask why and chase for a better way
+[ref](http://www.intelligenthq.com/resources/hiring-a-business-expert-through-an-online-platform/)
 
 ### Growth Hacker
 ![growth hacker](http://duraid.me/blog/wp-content/uploads/2014/12/growth-hacker-mix.png)
