@@ -7,6 +7,16 @@ tags:
 
   common seen path
   ![common path](https://www.ctl.io/developers/assets/images/blog/career-path-diagram.png)
+[大多数程序员的晋升路径](https://mp.weixin.qq.com/s?__biz=MzA5NzkxMzkwNQ==&mid=2649517382&idx=1&sn=447e6c680115efc5645bdb01bf334552&chksm=88815018bff6d90e19ee8e6215173127c724cec5f5fa732fdaa0dd373adca4d8dfef7c05123c&scene=0&key=564c3e9811aee0ab2db5f0407a740d32c3a4150f20ae9c057a36b59c97939ad5f2ae442f975067d95e449391200c5626b031fb9e71af85540a22642524a250177af139e79ac70f1de986b50eb1d000e4&ascene=0&uin=MjQ2NTA3MzgwMg%3D%3D&version=12010110&nettype=WIFI&fontScale=100&pass_ticket=77d29VI4OCibHd9DdhwLBvl9BW%2B%2Fa1iT5nJcGVMJD74zNU2HxhurzNu6M%2BLNSks2)
+并不复杂，无非以下几种：
+
+技术型：初级工程师->中级工程师->高级工程师->架构师（技术专家）->技术总监->CTO
+
+管理型：工程师->项目组长->项目经理->项目总监->技术总监->CTO
+
+交叉型：初级工程师->中级工程师->项目经理->技术总监->CTO（此路线技术和管理交叉进行，每个阶段做的事情不固定）
+
+转行型：初级工程师->转行产品、设计、销售、运营等
 
 ### Junior Developer
  - 0-3 years
@@ -139,6 +149,13 @@ Agile experience needed
 
 ### Conclusion
 **Senior leaders are never born naturally. They are made（骨干是折腾出来的）. It takes practice to be good about it. **
+25岁-44岁职业上的发展课题应该包含：
+
+  - 稳定于一项工作
+  - 确立自己将来的保障
+  - 发现适当的晋升路线
+  
+
 
 [career path of a programmer](https://www.ctl.io/developers/blog/post/career-path-of-a-programmer/)
 [If you want to Learn something, Teach it](http://keytokorean.com/blog/motivation/if-you-want-to-learn-something-teach-it/)

@@ -138,5 +138,6 @@ At last **`/api/v1/user` is simpler** compare with set to req.header
 [API 杂谈](http://36kr.com/p/5049025.html)
 [rest api design](https://betimdrenica.wordpress.com/2015/03/09/ideal-rest-api-design/)
 [best api design ](http://www.slideshare.net/SpencerSchneidenbach/restful-api-design-best-practices-using-aspnet-web-api)
+[auth api design sample](https://mi.juxinli.com/#/api)
 
 

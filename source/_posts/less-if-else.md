@@ -4,7 +4,8 @@ tags:
 ---
 
 ### lesser if else
-
+首先声明，不是要消除if
+而是，减少一些不必要的if判断，使得代码更优雅，更重要的是提高可维护性
 
 ### most easy
   use Ternary: 
@@ -12,6 +13,8 @@ tags:
   ```
   var result = condiction? trueResult : falseResult;  
   ```
+
+  缺点：case 超过2个就不容易了
 
 ### use switch
 
@@ -42,9 +45,10 @@ tags:
 
 ### in dynamic type language
 
-  also: you can use heritance way  in class:
+  also: you can use heritance way in class:
 
 ```
+  //es5
   function Son(){};
   util.inherits(Son, Father);
   Son.prototype.doSomething(){
@@ -55,6 +59,12 @@ tags:
   son.doSomething();
 ```
 
+
+```
+  //es6 use extends
+  //
+
+```
 in dynamic lange, your choice become something different and sometimes difficult
 
  - use array 
