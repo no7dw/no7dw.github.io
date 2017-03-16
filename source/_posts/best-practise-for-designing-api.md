@@ -87,6 +87,10 @@ response example:
 Note that:  
 
 ### error standard
+  
+ some use direct HTTP STATUS CODE , ref to session: ### use standard http status code
+
+
  should support http status code 、error code 、error msg
  example with a 200 OK:
  
@@ -95,7 +99,7 @@ Note that:
    {
      "code": -1,
      "message": "Something gone wrong",
-     "description": "optional print your stack message here"
+     <!-- "description": "optional print your stack message here" --> //this is optional , usally for error stack message
 
    }
 ```
