@@ -90,8 +90,18 @@ Note that:
   
  some use direct HTTP STATUS CODE , ref to session: ### use standard http status code
 
+ - method 1
 
- should support http status code 、error code 、error msg
+http status code 401
+```
+ {
+    error: "Invalid API key"
+  }
+```
+
+ - method 2:
+
+should support http status code 、error code 、error msg
  example with a 200 OK:
  
 
@@ -138,6 +148,7 @@ At last **`/api/v1/user` is simpler** compare with set to req.header
 
 
 ### ref
+[RESTful API 设计指南](http://www.ruanyifeng.com/blog/2014/05/restful_api.html)
 [best practices for a pragmatic restful api](http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api)
 [API 杂谈](http://36kr.com/p/5049025.html)
 [rest api design](https://betimdrenica.wordpress.com/2015/03/09/ideal-rest-api-design/)
