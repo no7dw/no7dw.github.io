@@ -1,3 +1,8 @@
+title: taobao-promotion-api
+date: 2016-02-03 23:57:35
+tags:
+---
+
 # 淘宝营销api
 
 ### total: 
@@ -5,7 +10,8 @@
  - variance naming rule
  - 提供沙箱环境
  - 使用api gateway
- - 使用rest(但返回结果包裹了)
+ - 使用rest(但返回结果包裹了 isp.thread-limit:102 -- 内部标准)
+ - last but not least : 做基础的api，通过api 构造各自营销策划活动，less is more. DRY.
 
 
 ### detail design
