@@ -116,6 +116,22 @@ so we need to change it into this:
 
     echo "export TERM=dumb" >> ~/.bashrc
 
+### docker pull 经常碰到网络超时问题
+    
+    ```
+         request canceled (Client.Timeout exceeded while awaiting headers)
+    ```
+
+[用国内的加速镜像](https://www.daocloud.io/mirror#accelerator-doc)
+
+    右键点击桌面顶栏的 docker 图标，选择 Preferences ，在 Daemon 标签（Docker 17.03 之前版本为 Advanced 标签）下的 Registry mirrors 列表中加入下面的镜像地址:
+
+```
+    http://18fb5052.m.daocloud.io 
+```
+    点击 Apply & Restart 按钮使设置生效。
+
+
  [ref](https://github.com/dockerfile/mariadb/issues/3)
 
   [1]: http://7xk67t.com1.z0.glb.clouddn.com/docker_running_config.png
