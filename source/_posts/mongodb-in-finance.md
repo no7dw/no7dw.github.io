@@ -1,9 +1,7 @@
-title: taobao-promotion-api
+title: mongodb 在互联网金融的应用
 date: 2017-03-28 21:37:35
 tags:
 ---
-
-# mongodb 在互联网金融的应用
 
 ### deploy 
 
