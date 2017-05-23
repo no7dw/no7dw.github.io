@@ -134,5 +134,26 @@ so we need to change it into this:
 
  [ref](https://github.com/dockerfile/mariadb/issues/3)
 
+
+### docker run out of disk causing can't start docker container
+
+error log:
+
+    ```
+        Docker Install: Error running DeviceCreate (createPool) dm_task_run failed
+    ```
+    
+solve by remove all images and container:
+
+    ```
+        # kill -9 $(lsof -t -c docker)
+        # rm -rf /var/lib/docker/*
+        # reboot
+    ```
+
+[solve link](https://github.com/moby/moby/issues/6325)
+
+
+
   [1]: http://7xk67t.com1.z0.glb.clouddn.com/docker_running_config.png
 
