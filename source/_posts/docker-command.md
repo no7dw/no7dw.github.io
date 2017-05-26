@@ -44,6 +44,10 @@ tags:
     c546c7e2122f
     0e9b0475adc8
 
+### restart
+    
+    $ docker restart my_container
+
 ### after you stopped some container, you may now remove it
 
     dengwei@dengweis-MacBook-Pro:~$ docker rmi c546c7e2122f
