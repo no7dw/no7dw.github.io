@@ -9,7 +9,8 @@ kong
 
 ### solution intro
 architecture
-
+![Alt text](./1495788480522.png)
+)
 ### why not just haproxy log (kinbana)
 haproxy rate limit http://blog.serverfault.com/2010/08/26/1016491873/
 simple version:
@@ -139,9 +140,13 @@ in docker container:
  - auth example 
 
         http POST localhost:8001/apis/0ee4b228-3089-4ae9-b13a-09ba4df8004e/plugins name=key-auth config.key_names=X-AUTH
+        http POST localhost:8001/consumers/b7199b84-cbe6-47ef-9cd0-c68ab27dfee0/key-auth key=abc123
 
-password ?
+verify :
 
+    http localhost:8000 HOST:mockbin.org X-AUTH:1234
+    http localhost:8000 HOST:mockbin.org X-AUTH:abc123
+previous one won't work , latter one works, which with the right **key**
 
 - rate limit example:
 find your api id by list apis
@@ -181,9 +186,22 @@ rest api  with other url in sub page
 ui for monitor(need enterprise)
 plugin with other language?
 
+
+### to do or not
+[api gateway: to be or not to be](https://www.slideshare.net/saltynut/api-gateway-to-be-or-not-to-be)
+
+
+### ref
+[API & Microservices Management with Kong](https://www.youtube.com/watch?v=S6CeWL2qvl4)
+[kong基础使用](https://yq.aliyun.com/articles/63180)
+[kong ui](https://github.com/rajarju/kong-ui.git)
+[docker](https://github.com/Mashape/docker-kong/blob/master/compose/docker-compose.yml)
+
 todo:
 nginx + koa sample
 how routing work and verify
 ui page
-comparing with other api gateway: loopback.io
+speed lost
+comparing with other api gateway: loopback.io http://orange.sumory.com/
+
 
