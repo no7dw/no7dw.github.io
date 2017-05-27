@@ -6,11 +6,15 @@ kong
 ### what
 
 ###  problems
+![before](https://getkong.org/assets/images/homepage/diagram-left.png)
+![architecture](http://booluimg.qiniudn.com/17-5-27/16371874.jpg)
 
 ### solution intro
-architecture
-![Alt text](./1495788480522.png)
-)
+![new](https://getkong.org/assets/images/homepage/diagram-right.png)
+
+单点部署的情况：
+![spof](http://booluimg.qiniudn.com/17-5-27/34167398.jpg)
+
 ### why not just haproxy log (kinbana)
 haproxy rate limit http://blog.serverfault.com/2010/08/26/1016491873/
 simple version:
@@ -195,9 +199,22 @@ plugin with other language?
 [API & Microservices Management with Kong](https://www.youtube.com/watch?v=S6CeWL2qvl4)
 [kong基础使用](https://yq.aliyun.com/articles/63180)
 [kong ui](https://github.com/rajarju/kong-ui.git)
+[kong dashboard](https://github.com/PGBI/kong-dashboard)
 [docker](https://github.com/Mashape/docker-kong/blob/master/compose/docker-compose.yml)
+[add rest api to kong](https://my.oschina.net/u/2600078/blog/781724)
+[聊聊架构：深入浅出聊聊企业级API网关](https://mp.weixin.qq.com/s?__biz=MzA5Nzc4OTA1Mw==&mid=2659599286&idx=1&sn=f41c9dc7f9f2027eab97889b1b01a391&chksm=8be996a4bc9e1fb29ea77d0941bedb60714c6a7ae94edd44bf705a0910979e18e631210ab326&scene=0&key=836b3b965f94a78ba80fb048666939a2e7de5f5c01f7fbc167a17d3ddd10220531b77bd6e5c8c5ff87643c6d9c5ace0cdb12721aa629d55b250738c6842327e6fff205bd24f060498c7f84e1597959cd&ascene=0&uin=MjQ2NTA3MzgwMg%3D%3D&devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.4+build(16E195)&version=12020510&nettype=WIFI&fontScale=100&pass_ticket=%2F6qDX3DsRvTP%2FN295fYWIZ9sSlykZxBYcayxgbeiqSen6vZ5YEJ%2F%2BCqIWEtL7z0J)
 
-todo:
+### problems
+in docker you will not success in forward your request via kong. [issue here](https://github.com/Mashape/kong/issues/182)
+
+        dengwei@RMBAP:~/projects/work$ http POST localhost:8001/apis name=localdemoabc upstream_url=http://localhost:3010/ uris=/abc
+
+        HTTP/1.1 201 Created
+
+        dengwei@RMBAP:~/projects/work$ http localhost:8000/abc host=localhost
+        HTTP/1.1 502 Bad Gateway
+
+### todo:
 nginx + koa sample
 how routing work and verify
 ui page
