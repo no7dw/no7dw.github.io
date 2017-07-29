@@ -45,6 +45,10 @@ dependency 里面的[主要信息][1]groupId, 相当与组织机构的项目组I
 
 然而看起来，要记住的内容十分多，不如npm ： 只需要知道package name, version 简单可以用latest。记住groupid 真的不容易。However,其实并不需要真的记住。有IDE 工具协助：
 安装elipse , maven plugin， 打开 pom.xml , 选择 dependencies, 选择 Add, 直接在search 处，输入你的package name， 会列出搜索结果，自动使用 latest version。当然也可以展开细节list指定某个特定的version。
+如果不用elipse, 也可：
+
+http://oqln5pzeb.bkt.clouddn.com/17-7-29/90028337.jpg
+http://oqln5pzeb.bkt.clouddn.com/17-7-29/90028337.jpg
 
 [trouble sovling when mvn search not working](http://stackoverflow.com/questions/14059685/eclipse-maven-search-dependencies-doesnt-work#_=_)
 [reindex maven project with Eclipse](https://books.sonatype.com/m2eclipse-book/reference/repository-sect-repo-view.html)
