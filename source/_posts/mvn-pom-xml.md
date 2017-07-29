@@ -121,7 +121,8 @@ mvn 可用编译，打包，安装，build项目
     <finalName>hello</finalName>
   	</build>
 
-
+常见的plugins
+http://www.cnblogs.com/pixy/p/4977550.html
 
 类似 npm clean , npm <command> ,see `npm --help`
 
