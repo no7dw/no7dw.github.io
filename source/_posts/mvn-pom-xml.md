@@ -1,4 +1,4 @@
-title: mvn pom.xml
+itle: mvn pom.xml
 date: 2016-03-27 22:01:47
 tags:
 ---
@@ -107,6 +107,19 @@ mvn 可用编译，打包，安装，build项目
   根据plugin 输入参数构建，如上述的：
 
     mvn jetty:run
+   
+ 注意： 使用jetty 来跑的时候，需要配置jetty 的plugin
+
+	  <build>
+      <plugins>
+      <plugin>
+          <groupId>org.mortbay.jetty</groupId>
+          <artifactId>maven-jetty-plugin</artifactId>
+          <version>6.1.26</version>
+      </plugin>
+      </plugins>
+    <finalName>hello</finalName>
+  	</build>
 
 
 
