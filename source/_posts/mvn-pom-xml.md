@@ -50,6 +50,25 @@ dependency 里面的[主要信息][1]groupId, 相当与组织机构的项目组I
 http://oqln5pzeb.bkt.clouddn.com/17-7-29/90028337.jpg
 http://oqln5pzeb.bkt.clouddn.com/17-7-29/90028337.jpg
 
+## mvn package
+
+    compile 正常后，如果你用的archeType 是web-app，你可以打包到tomcat 的webapp目录去运行;其他的类似 譬如打包出jar。
+
+## tomcat deploy
+   
+   以一个archType 为web-app 的项目为例，mvn package 后, 除了上述的cp 到tomcat webapp  目录， 
+   另外一种手动页面的部署方法：
+   localhost:8080 --> manage app
+   按要求输入用户名密码后，
+   http://oqln5pzeb.bkt.clouddn.com/17-7-29/84565023.jpg
+   在输入 locahost:8080/hello
+   则可以看到hello world 页面.
+
+ 
+   如果遇到403,请参考这里。
+    https://www.mkyong.com/tomcat/tomcat-default-administrator-password/
+ 
+
 [trouble sovling when mvn search not working](http://stackoverflow.com/questions/14059685/eclipse-maven-search-dependencies-doesnt-work#_=_)
 [reindex maven project with Eclipse](https://books.sonatype.com/m2eclipse-book/reference/repository-sect-repo-view.html)
 
@@ -64,9 +83,11 @@ tomcat/jetty 是一些mvn plugin.
 Also:
 mvn 可用编译，打包，安装，build项目
 
-  - 编译：(nodejs 里面没有这个--因动态语言)
+  - 编译：(nodejs 里面没有这个--因动态语言) 
 
     mvn compile
+
+  compile 会下载dependency依赖。
 
   - 打包：(nodejs 里面没有这个--因动态语言)
 
