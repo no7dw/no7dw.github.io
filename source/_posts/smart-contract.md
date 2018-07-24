@@ -28,9 +28,9 @@ local variables of value type (i.e. neither array, nor struct nor mapping) are s
 
 ### constanst vs view vs pure 
 
-  - constantStarting with solc 0.4.17, constant is deprecated in favor of two new and more specific modifiers.
-  - View This is generally the replacement for constant. It indicates that the function will not alter the storage state in any way.
-  - Pure This is even more restrictive, indicating that it won't even read the storage state.
+  - constant: Starting with solc 0.4.17, constant is deprecated in favor of two new and more specific modifiers.
+  - View: This is generally the replacement for constant. It indicates that the function will not alter the storage state in any way.
+  - Pure: This is even more restrictive, indicating that it won't even read the storage state.
 
 
 ```
@@ -72,13 +72,16 @@ todo:
 lib 
 use external source(local sol or git)
 call from another contract
-
+msg.sender what's in msg
 
 ide 调试
 
 string compare
 return struct
 testing
+
+more useful ref:
+[best practise](https://github.com/ConsenSys/smart-contract-best-practices)
 
 
 

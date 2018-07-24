@@ -6,17 +6,22 @@ tags:
 # 创业公司如何做好数据驱动的开发工作
 
 创业公司钱、开发资源有限，考究更少的工作产生更大的价值，更快的迭代mvp。
+data -> info -> knowledge -> wisdom
 
 ## 报表数据
 
 ### 轻量数据
 
+  系统架构复杂度决定采用的方式
+
   - 单体应用，单个应用DB：直接从应用的DB的副本集读取，为防止报表数据的读写影响主系统。
     副本集根据线上应用DB压力、报表DB压力情况选择：
+
     - 可以直接从DB集群中挑取只读DB来做报表操作
     - 可以通过同步机制(oplog/binlog)，同步另外的集群去操作。[!img]图
 
   - 跨系统/微服务应用：
+
     - 通过调用微服务的api来获取数据，缺点：大量数据操作的性能消耗应为来回的消耗在调用方与DB之间，数据操作慢。
     - 通过数据同步机制，同步多个DB源到一个报表DB（HBase/MongoDB）。[!img]图
 
@@ -26,6 +31,7 @@ tags:
   由于负责报表的开发的一般是熟悉 SQL/R/Python，所以考虑直接SQL类的数据直接查到时最合适的（投入时间少、熟悉度高）。[!img]图
   BI 报表我们可以选择类似Redash/SuperSet 这类工具，来快速定制业务的报表。
 
+
 ### 有效利用第三方统计平台
   
   baidu/google
@@ -33,20 +39,14 @@ tags:
   漏斗、留存、热点、bug、网络、用户的画像(自己也要分析)
 
 
-### AB test
-  
-  金融公司，模型指标
-  工具:
-    - ab test（https://github.com/xavimb/ab-testing）[!img]图
-    - apphoc
 
-### 应用监控
+### 用户应用监控
 
   热点、漏斗、行为
   fullstory/appsee/mouseflow
 
 
-### 知晓系统的指标
+### 系统的指标监控
 
 几个需要关注的维度
   - Nginx 
@@ -73,13 +73,20 @@ tags:
   大量：API SDK 调用方式，方便Python/R分析
 
 
+### AB test
+  
+  金融公司，模型指标
+  工具:
+    - ab test（https://github.com/xavimb/ab-testing）[!img]图
+    - apphoc
+
+
 ### 作为开发，需要关心业务
 
-  读懂业务的指标
-  ROC
-  AUC
-  GINI
-
+  读懂业务的指标 ：
+  普通（DRU、DAU）
+  专业（ROC、AUC、GINI）
+  数据全栈工程师
 
 ### 迭代的效果回顾
 
