@@ -6,6 +6,9 @@ date: 2016-05-15 12:33:10
 
     #!/bin/bash
     echo 'Hello Bash World'
+### for loop in one line 一行实现循环调用
+
+    for i in {1..5}; do COMMAND1-HERE && COMMAND2-HERE; done
 
 ### 定义function
 你可以用function 函数名{} 
