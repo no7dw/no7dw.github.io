@@ -1,6 +1,7 @@
 title: bubi 布萌区块链数字资产网络 分析 
 date: 2018-08-15 12:33:10
-
+tags:
+---
 [api readme]( https://www.bumeng.cn/api.html)
 
 重点:
