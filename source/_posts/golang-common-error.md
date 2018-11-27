@@ -83,3 +83,16 @@ tags:
 
 #### wrong not using go keyworld when call async func
 
+
+### cannot refer to unexported name
+    
+    your function name should start with Cap letter: 
+```
+    func Foo(){
+    } 
+```
+instead of 
+```
+    func foo(){
+    }
+```
