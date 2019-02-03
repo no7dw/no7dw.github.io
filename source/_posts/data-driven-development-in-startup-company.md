@@ -38,6 +38,10 @@ data -> info -> knowledge -> wisdom
   由于负责报表的开发的一般是熟悉 SQL/R/Python，所以考虑直接SQL类的数据直接查到时最合适的（投入时间少、熟悉度高）。[!img]图
   BI 报表我们可以选择类似Redash/SuperSet 这类工具，来快速定制业务的报表。
 
+### 数据探索
+
+  冰山一角的数据，用tableau 的BI 软件先去数据仓库探索 ->data sdk -> ETL-> 结构化 -> 报表获取&应用层调用
+
 
 ### 数据分析系统建立的阶段
 

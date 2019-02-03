@@ -86,13 +86,57 @@ tags:
 
 ### cannot refer to unexported name
     
-    your function name should start with Cap letter: 
+  大写第一个字母,对于你的需要被导出的函数
+    
 ```
     func Foo(){
     } 
 ```
+
 instead of 
+
 ```
     func foo(){
     }
 ```
+
+[Error in importing custom packages in Go Lang](https://stackoverflow.com/questions/25501875/error-in-importing-custom-packages-in-go-lang)
+
+
+### cannot find package xxx
+
+  如果要引入本项目的包的目录, 例如
+
+`  
+  dengwei@RMBAP:~/go/src/github.com/no7dw/fan404$ ls
+  README.md db        main.go   vendor
+  dengwei@RMBAP:~/go/src/github.com/no7dw/fan404$ tree db
+  db
+  └── redisutil.go
+`
+
+1.11 version 必须：
+
+```
+  import "github.com/no7dw/fan404/db"
+```
+
+不能
+
+```
+  import "fan404/db"
+```
+
+
+不能
+
+```
+  import "./db"
+```
+
+麻烦~
+
+
+[everything packages in go](https://medium.com/rungo/everything-you-need-to-know-about-packages-in-go-b8bac62b74cc)
+[how to import local packages in go](https://stackoverflow.com/questions/35480623/how-to-import-local-packages-in-go/35511866)
+[hdr Relative import paths](https://golang.org/cmd/go/#hdr-Relative_import_paths)
