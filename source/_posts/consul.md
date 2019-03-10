@@ -63,9 +63,9 @@ services:
 ![template](https://wade-blog.oss-cn-shenzhen.aliyuncs.com/consule.gif)
 
 单机的架构、原理如下：
-![Alt text](./1551845679501.png)
+![Alt text](http://wade-blog.oss-cn-shenzhen.aliyuncs.com/1551845679501.png)
 or 参考：
-![Alt text](./1551846959382.png)
+![Alt text](http://wade-blog.oss-cn-shenzhen.aliyuncs.com/1551846959382.png)
 
 
 consul 只是其中一种注册中心的实现，registrator support zk&consule/etcd/skydns2 
@@ -75,7 +75,7 @@ consul 只是其中一种注册中心的实现，registrator support zk&consule/
 https://github.com/gliderlabs/registrator/blob/master/registrator.go
 根据tick 的到来，registrator.go 做几件事情：
 
-![registrator.go](./1551840835089.png)
+![registrator.go](http://wade-blog.oss-cn-shenzhen.aliyuncs.com/1551840835089.png)
 
  - resync interval 到达，扫描， 同步容器状态 refresh ：
    -  alive 的container，
@@ -95,7 +95,7 @@ https://github.com/gliderlabs/registrator/blob/master/registrator.go
 
 每个宿主机都要配置 registrator ，因为只能同一台宿主机去扫描container 的状态，注意红框处：
 
-![Alt text](./1551845649823.png)
+![Alt text](http://wade-blog.oss-cn-shenzhen.aliyuncs.com/1551845649823.png)
 
 集群的架构
 
