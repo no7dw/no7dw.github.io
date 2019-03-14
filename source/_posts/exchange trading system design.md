@@ -1,4 +1,4 @@
-exchange trading system design
+exchange trading system design 交易所系统设计
 
 用户 1 --》n 账户 account
 账户 1 --》n 订单 order
@@ -63,6 +63,9 @@ rest api 设计
 注意所有的数字在传输的时候都是 string，防止数据在加密过程中容易出错，并保留固定位数。（防止 2.00 与 2.000 有差别）
 
 performance metric
+  - return
+  - exposure
+  - unrealized return
 
 错误码
 
@@ -75,6 +78,36 @@ performance metric
 
  - 优点：比较直观的是ISODate , 通用，便于时区识别 
  - 缺点：排序稍差于 timestamp
+
+币币交易
+
+期货/合约交易
+
+kline 的数据存储
+  - 按频率区分开表格存
+
+不用筛选，快速
+
+数据存储：
+  - 区分热数据、冷数据
+    - 热数据：最近的、要实时快的
+    - 冷数据：稍久的，允许稍长一点的时延
+
+容量估计：
+  - 带宽
+  - 数据
+  - 系统压力
+
+子系统:
+ - 行情系统
+ - 交易系统
+ - 风控系统
+ 
+量化策略系统
+ - 行情系统
+ - 交易系统
+ - 风控系统
+ - 策略系统
 
 
 
