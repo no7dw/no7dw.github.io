@@ -1,8 +1,12 @@
-exchange trading system design 交易所系统设计
+### exchange trading system design 交易所系统设计
+
+#### model关系
 
 用户 1 --》n 账户 account
 账户 1 --》n 订单 order
 订单 1 --》n 账单流水ledger
+
+#### model设计关键
 
 订单order: 
 type 类型 :
@@ -55,23 +59,23 @@ portfolio
 
 product & instrument
 
-rest api 设计
+#### rest api 设计
   - version control v1 v2 v3 in url
 2018-09-12T07:46:19.435ZGET/api/spot/v3/accounts/btc/ledger?limit=1&from=2&to=4 check <best practices for designing  web api>
   - 
 
 注意所有的数字在传输的时候都是 string，防止数据在加密过程中容易出错，并保留固定位数。（防止 2.00 与 2.000 有差别）
 
-performance metric
+#### performance metric
   - return
   - exposure
   - unrealized return
 
-错误码
+#### 错误码
 
-安全
+#### 安全
 
-交易撮合
+#### 交易撮合
 
 关于时间 UTC String(Thu, 14 Mar 2019 08:06:39 GMT) vs timestamp (1552550799091) vs ISODate (2019-03-14T08:06:39.091Z)
 建议 ISODate
@@ -79,29 +83,37 @@ performance metric
  - 优点：比较直观的是ISODate , 通用，便于时区识别 
  - 缺点：排序稍差于 timestamp
 
-币币交易
+#### 币币交易
 
-期货/合约交易
+#### 期货/合约交易
 
-kline 的数据存储
-  - 按频率区分开表格存
 
-不用筛选，快速
+### 数据
 
-数据存储：
+#### 数据存储：
   - 区分热数据、冷数据
     - 热数据：最近的、要实时快的
     - 冷数据：稍久的，允许稍长一点的时延
+
+#### kline 的数据存储
+  - 按频率区分开表格存 
+  - 不用筛选，快速
+
+#### 数据真的太多了怎么办
+  - 某日清算正确后，可以将balance 等关键信息汇总至某日，作为snapshot。以后基于这个数据去计算
+  - 某日清算正确前的数据，把数据存到冷存储，如磁带机(多份)
+
 
 容量估计：
   - 带宽
   - 数据
   - 系统压力
 
-子系统:
+关键子系统概述:
  - 行情系统
  - 交易系统
  - 风控系统
+ - 营销系统
  
 量化策略系统
  - 行情系统
