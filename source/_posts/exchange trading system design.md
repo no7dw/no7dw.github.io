@@ -103,6 +103,37 @@ product & instrument
   - 某日清算正确后，可以将balance 等关键信息汇总至某日，作为snapshot。以后基于这个数据去计算
   - 某日清算正确前的数据，把数据存到冷存储，如磁带机(多份)
 
+#### 架构
+
+Kong 分发不同的交易币种种,不同的交易产品(期货合约/币币交易/法币/其他API)
+
+`
+  $ curl  -I  https://www.okex.com
+  HTTP/1.1 200 Tunnel established
+
+  HTTP/1.1 200
+  Content-Type: text/html;charset=UTF-8
+  Content-Length: 45825
+  Connection: keep-alive
+  Vary: Accept-Encoding
+  X-RateLimit-Limit-second: 50
+  X-RateLimit-Remaining-second: 49
+  X-RateLimit-Limit-minute: 100
+  X-RateLimit-Remaining-minute: 99
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+  Pragma: no-cache
+  Expires: 0
+  X-Frame-Options: SAMEORIGIN
+  Set-Cookie: locale=en_US; Max-Age=604800; Expires=Thu, 28-Mar-2019 03:39:44 GMT; Path=/
+  Content-Language: en-US
+  Date: Thu, 21 Mar 2019 03:39:44 GMT
+  X-Kong-Upstream-Latency: 13
+  X-Kong-Proxy-Latency: 0
+  Via: kong/0.12.3
+
+`
 
 容量估计：
   - 带宽
