@@ -33,6 +33,7 @@ tags:
 
 [git src][4]
 
+### todo perf compare http and rpc in grafana 
 
   [1]: http://nordicapis.com/microservice-showdown-rest-vs-soap-vs-apache-thrift-and-why-it-matters/
   [2]: http://www.programmableweb.com/news/rest-losing-its-flair-rest-api-alternatives/analysis/2013/12/19
