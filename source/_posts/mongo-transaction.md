@@ -124,8 +124,7 @@ write concern : your code write-concern option, example :
   const schema = new Schema({ name: String }, {
     writeConcern: {
       w: 'majority',
-      j: true,
-      wtimeout: 1000
+      j: true
     }
 });
 
