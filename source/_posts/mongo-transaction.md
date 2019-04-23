@@ -97,3 +97,38 @@ this will return immediately, when the debug point continue, it ran into excepti
   MongoError: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
   ....
 `
+
+### PAY attention 
+
+![write concern & read concern](https://cdn-images-1.medium.com/max/1600/1*F_a3X-box50qZOllKb-D1g.jpeg)
+
+In MongoDB, clients can see the results of writes before the writes are durable:
+clients using "local" ***by default***  can see the result of a write operation ***before*** the write operation is acknowledged to the issuing client.
+[read isolation](https://docs.mongodb.com/v3.2/core/read-isolation-consistency-recency/)
+
+Thus , in the case of we need to ***read own writes*** we need to read concern set "majority", wirte concern "majority"
+
+#### how to config this
+
+[further info read-concern](https://docs.mongodb.com/manual/reference/read-concern/)
+
+[read-your-own-writes](https://docs.mongodb.com/manual/reference/read-concern-majority/#read-your-own-writes)
+
+read concern :  you can disable read concern by setting either:
+  - -- enableMajorityReadConcern command line option to false.
+  - replication.enableMajorityReadConcern configuration file setting to false
+
+write concern : your code write-concern option, example :
+
+```
+  const schema = new Schema({ name: String }, {
+    writeConcern: {
+      w: 'majority',
+      j: true,
+      wtimeout: 1000
+    }
+});
+
+```
+
+
