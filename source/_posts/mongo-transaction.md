@@ -1,16 +1,16 @@
 ### mongodb transaction
 
 #### init replset mongodb env 
-
-$mongod --port 27017 --dbpath ./db --replSet rstest
-$mongod --port 37017 --dbpath ./db --replSet rstest
-$mongod --port 47017 --dbpath ./db --replSet rstest
+$mkdir db1 && mkdir db2 && mkdir db3
+$mongod --port 27017 --dbpath ./db --replSet rstest1
+$mongod --port 37017 --dbpath ./db2 --replSet rstest1
+$mongod --port 47017 --dbpath ./db3 --replSet rstest1
 
 $mongo --port 27017
 
 `
   rs.initiate( {
-     _id : "rstest",
+     _id : "rstest1",
      members: [
         { _id: 0, host: "127.0.0.1:27017" },
         { _id: 1, host: "127.0.0.1:37017" },
