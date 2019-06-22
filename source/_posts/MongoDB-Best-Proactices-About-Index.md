@@ -18,10 +18,12 @@
 hash / b-tree / b+-tree 
 redis HSET / MongoDB&PostgreSQL / MySQL 
 
-hashmap 
+hashmap
+
 ![hashmap](http://www.51code.com/uploads/allimg/190315/4_1453444561.jpg)
 
 一图见b-tree & b+-tree 差别
+
 ![b-tree & b+-tree](https://i.stack.imgur.com/l6UyF.png)
  
   - b+-tree 叶子存数据，非叶子存索引，不存数据，叶子间有link
@@ -599,7 +601,7 @@ next 我们分别建立几个索引
   "ok" : 1
 }
 
-***命中索引， 跟 query 的各个字段顺序不相关，如我们猜测  ***
+***命中索引， 跟 query 的各个字段顺序不相关，如我们猜测***
 
 ***有趣部分再来， 我们删掉索引{userId:1}***
 
