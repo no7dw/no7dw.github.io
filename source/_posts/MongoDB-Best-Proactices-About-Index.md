@@ -134,6 +134,7 @@ next 我们分别建立几个索引
   "numIndexesAfter" : 2,
   "ok" : 1
 }
+
 > db.loans.find({ "userId" : "59e022d33f239800129c61c7", "status" : "repayed", }).explain()
 {
   "queryPlanner" : {
@@ -208,6 +209,7 @@ next 我们分别建立几个索引
   "numIndexesAfter" : 3,
   "ok" : 1
 }
+
 > db.loans.find({ "userId" : "59e022d33f239800129c61c7", "status" : "repayed", }).explain()
 {
   "queryPlanner" : {
@@ -607,6 +609,7 @@ next 我们分别建立几个索引
 
 > db.loans.dropIndex({"userId":1})
 { "nIndexesWas" : 3, "ok" : 1 }
+
 > db.loans.find({"userId" : "59e022d33f239800129c61c7", }).explain()
 {
   "queryPlanner" : {
@@ -767,6 +770,7 @@ next 我们分别建立几个索引
 
 > db.loans.dropIndex("userId_1_status_1")
 { "nIndexesWas" : 2, "ok" : 1 }
+
 > db.loans.getIndexes()
 [
   {
@@ -778,6 +782,7 @@ next 我们分别建立几个索引
     "ns" : "cashLoan.loans"
   }
 ]
+
 > db.loans.createIndex({status:1, userId:1})
 {
   "createdCollectionAutomatically" : false,
@@ -785,6 +790,7 @@ next 我们分别建立几个索引
   "numIndexesAfter" : 2,
   "ok" : 1
 }
+
 > db.loans.getIndexes()
 [
   {
@@ -805,6 +811,7 @@ next 我们分别建立几个索引
     "ns" : "cashLoan.loans"
   }
 ]
+
 > db.loans.find({ "status" : "repayed" }).explain()
 {
   "queryPlanner" : {
@@ -857,6 +864,7 @@ next 我们分别建立几个索引
   },
   "ok" : 1
 }
+
 > db.loans.getIndexes()
 [
   {
@@ -877,6 +885,7 @@ next 我们分别建立几个索引
     "ns" : "cashLoan.loans"
   }
 ]
+
 > db.loans.find({"userId" : "59e022d33f239800129c61c7", }).explain()
 {
   "queryPlanner" : {
