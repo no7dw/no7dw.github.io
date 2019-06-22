@@ -4,7 +4,6 @@
  - 我们查询的字段会各种case都有，是不是各个涉及查询的字段都要加索引？
  - 复合索引和单字段怎么选择，都加还是每一个的单个字段就好了？
  - 加索引有没有副作用？
- - 到达什么数据量级的时候应该加索引？
  - 索引都加了，但还是不够快？怎么办？
  
 本文尝试去解释索引的基本知识&解答上述的疑问。
@@ -21,6 +20,7 @@ redis HSET / MongoDB&PostgreSQL / MySQL
 
 hashmap 
 ![hashmap](http://www.51code.com/uploads/allimg/190315/4_1453444561.jpg)
+
 一图见b-tree & b+-tree 差别
 ![b-tree & b+-tree](https://i.stack.imgur.com/l6UyF.png)
  
@@ -53,7 +53,7 @@ b+ tree  O(Log(n)) 连续数据， 查询的稳定性
 既然如此，选择哪些字段作为索引呢？当查询用到这些条件，怎么办？
 拿一个最简单的hashmap来讲，为什么复杂度不是O(1)，而是所谓接近 O(1)。因为有key 冲突/重复啊~。DB 去找的时候，key 冲突的数据一大堆的话，还是得轮着继续找。
 上面的b-tree  看键(key)的选择也是如此。
-因此一个大部分开发经常犯的错就是*** 对没有区分度的key 建索引*** 。
+因此一个大部分开发经常犯的错就是***对没有区分度的key 建索引***。
 例如：很多就只有集中类别的 type/status 的 documents count 达几十万以上的collection  --- 通常这种索引没什么帮助。
 
 #### 复合索引
@@ -196,7 +196,7 @@ next 我们分别建立几个索引
 
 ***如愿命中 {userId:1, status:1} 作为 winning plan***
 
-*** step2  再建立个典型的索引 userId ***
+***step2  再建立个典型的索引 userId***
 
 
 > db.loans.createIndex({userId:1})
@@ -414,7 +414,7 @@ next 我们分别建立几个索引
   "ok" : 1
 }
 
-*** 有趣的部分：  status 不命中索引， 全表扫描  ***
+***有趣的部分：  status 不命中索引， 全表扫描 ***
 接下来，我加了个sort 
 
 > db.loans.find({ "userId" : "59e022d33f239800129c61c7" }).sort({status:1}).explain()
@@ -504,7 +504,7 @@ next 我们分别建立几个索引
   "ok" : 1
 }
 
-*** 有趣的部分：  status 不命中索引  ***
+***有趣的部分：  status 不命中索引 ***
 
 
 > db.loans.find({ "status" : "repayed","userId" : "59e022d33f239800129c61c7", }).explain()
@@ -599,9 +599,9 @@ next 我们分别建立几个索引
   "ok" : 1
 }
 
-*** 命中索引， 跟 query 的各个字段顺序不相关，如我们猜测   ***
+***命中索引， 跟 query 的各个字段顺序不相关，如我们猜测  ***
 
-*** 有趣部分再来， 我们删掉索引{userId:1} ***
+***有趣部分再来， 我们删掉索引{userId:1}***
 
 > db.loans.dropIndex({"userId":1})
 { "nIndexesWas" : 3, "ok" : 1 }
@@ -658,9 +658,9 @@ next 我们分别建立几个索引
   "ok" : 1
 }
 
-*** DB 执行分析器觉得索引{userId:1, status:1} 能更优 ***
+***DB 执行分析器觉得索引{userId:1, status:1} 能更优***
 
-*** 没有命中复合索引 ，这个是因为status 不是 leading field***
+***没有命中复合索引 ，这个是因为status 不是 leading field***
 
 > db.loans.find({ "status" : "repayed" }).explain()
 {
@@ -696,7 +696,7 @@ next 我们分别建立几个索引
 }
 
 
-*** 再换个角度sort 一遍， 与前面query & sort 互换 ，之前是***
+***再换个角度sort 一遍， 与前面query & sort 互换 ，之前是***
 > db.loans.find({userId:1}).sort({ "status" : "repayed" }) 
 看看有啥不一样？
 
@@ -759,9 +759,9 @@ next 我们分别建立几个索引
   "ok" : 1
 }
 
-*** 如猜测，命中索引***
+***如猜测，命中索引***
 
-再来玩1玩，确认下 *** leading filed *** 试验：
+再来玩1玩，确认下***leading filed***试验：
 
 > db.loans.dropIndex("userId_1_status_1")
 { "nIndexesWas" : 2, "ok" : 1 }
@@ -908,7 +908,7 @@ next 我们分别建立几个索引
   "ok" : 1
 }
 
-***  看完 这个试验， 明白了 {userId:1, status:1},  vs   {status:1,userId:1} 的差别了吗？***
+***看完 这个试验， 明白了 {userId:1, status:1},  vs   {status:1,userId:1} 的差别了吗?***
 
 PS：这个case 里面其实status 区分度不高，不应该建立的，这里只是作为实例展示。
 
