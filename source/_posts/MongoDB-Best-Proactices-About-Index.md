@@ -42,9 +42,9 @@ b+ tree  O(Log(n)) 连续数据， 查询的稳定性
 #### 数据&索引的存储
 
 ![storage](https://slideplayer.com/slide/13450455/80/images/18/Ensure+indexes+fit+in+RAM.jpg)
-存储， index 尽量存储在内存， data 其次。
-索引不是越多越好。只保留必要的内存尽量用在刀刃上。
-如果index memory占用较多。
+index 尽量存储在内存， data 其次。
+注意只保留必要的index，内存尽量用在刀刃上。
+如果index memory 都接近占满memory，那么就很容易读到disk，速度就下来了。
 
 
 
@@ -134,6 +134,7 @@ next 我们分别建立几个索引
   "numIndexesAfter" : 2,
   "ok" : 1
 }
+
 > db.loans.find({ "userId" : "59e022d33f239800129c61c7", "status" : "repayed", }).explain()
 {
   "queryPlanner" : {
@@ -208,6 +209,7 @@ next 我们分别建立几个索引
   "numIndexesAfter" : 3,
   "ok" : 1
 }
+
 > db.loans.find({ "userId" : "59e022d33f239800129c61c7", "status" : "repayed", }).explain()
 {
   "queryPlanner" : {
@@ -607,6 +609,7 @@ next 我们分别建立几个索引
 
 > db.loans.dropIndex({"userId":1})
 { "nIndexesWas" : 3, "ok" : 1 }
+
 > db.loans.find({"userId" : "59e022d33f239800129c61c7", }).explain()
 {
   "queryPlanner" : {
@@ -767,6 +770,7 @@ next 我们分别建立几个索引
 
 > db.loans.dropIndex("userId_1_status_1")
 { "nIndexesWas" : 2, "ok" : 1 }
+
 > db.loans.getIndexes()
 [
   {
@@ -778,6 +782,7 @@ next 我们分别建立几个索引
     "ns" : "cashLoan.loans"
   }
 ]
+
 > db.loans.createIndex({status:1, userId:1})
 {
   "createdCollectionAutomatically" : false,
@@ -785,6 +790,7 @@ next 我们分别建立几个索引
   "numIndexesAfter" : 2,
   "ok" : 1
 }
+
 > db.loans.getIndexes()
 [
   {
@@ -805,6 +811,7 @@ next 我们分别建立几个索引
     "ns" : "cashLoan.loans"
   }
 ]
+
 > db.loans.find({ "status" : "repayed" }).explain()
 {
   "queryPlanner" : {
@@ -857,6 +864,7 @@ next 我们分别建立几个索引
   },
   "ok" : 1
 }
+
 > db.loans.getIndexes()
 [
   {
@@ -877,6 +885,7 @@ next 我们分别建立几个索引
     "ns" : "cashLoan.loans"
   }
 ]
+
 > db.loans.find({"userId" : "59e022d33f239800129c61c7", }).explain()
 {
   "queryPlanner" : {
