@@ -6,7 +6,7 @@
 不是建立了index 就完事了. 写query 要注意：
   - table size
   - growing trend 
-  - cardinality, (稀疏问题) 
+  - cardinality (稀疏问题) 
 
 然后决定index的选择。
 
