@@ -18,9 +18,7 @@ PS：这个case 里面其实status 区分度不高，不应该建立的，这里
 > db.loans.find({ "userId" : "59e022d33f239800129c61c7", "status" : "repayed", }).explain()
 {
   "queryPlanner" : {
-    "plannerVersion" : 1,
     "namespace" : "cashLoan.loans",
-    "indexFilterSet" : false,
     "parsedQuery" : {
       "$and" : [
         {
@@ -35,8 +33,6 @@ PS：这个case 里面其实status 区分度不高，不应该建立的，这里
         }
       ]
     },
-    "queryHash" : "15D5A9A1",
-    "planCacheKey" : "15D5A9A1",
     "winningPlan" : {
       "stage" : "COLLSCAN",
       "filter" : {
@@ -77,9 +73,7 @@ next 我们分别建立几个索引
 > db.loans.find({ "userId" : "59e022d33f239800129c61c7", "status" : "repayed", }).explain()
 {
   "queryPlanner" : {
-    "plannerVersion" : 1,
     "namespace" : "cashLoan.loans",
-    "indexFilterSet" : false,
     "parsedQuery" : {
       "$and" : [
         {
@@ -94,8 +88,6 @@ next 我们分别建立几个索引
         }
       ]
     },
-    "queryHash" : "15D5A9A1",
-    "planCacheKey" : "BB87F2BA",
     "winningPlan" : {
       "stage" : "FETCH",
       "inputStage" : {
@@ -105,15 +97,10 @@ next 我们分别建立几个索引
           "status" : 1
         },
         "indexName" : "userId_1_status_1",
-        "isMultiKey" : false,
         "multiKeyPaths" : {
           "userId" : [ ],
           "status" : [ ]
         },
-        "isUnique" : false,
-        "isSparse" : false,
-        "isPartial" : false,
-        "indexVersion" : 2,
         "direction" : "forward",
         "indexBounds" : {
           "userId" : [
@@ -146,9 +133,7 @@ next 我们分别建立几个索引
 > db.loans.find({ "userId" : "59e022d33f239800129c61c7", "status" : "repayed", }).explain()
 {
   "queryPlanner" : {
-    "plannerVersion" : 1,
     "namespace" : "cashLoan.loans",
-    "indexFilterSet" : false,
     "parsedQuery" : {
       "$and" : [
         {
@@ -163,8 +148,6 @@ next 我们分别建立几个索引
         }
       ]
     },
-    "queryHash" : "15D5A9A1",
-    "planCacheKey" : "1B1A4861",
     "winningPlan" : {
       "stage" : "FETCH",
       "inputStage" : {
@@ -174,15 +157,10 @@ next 我们分别建立几个索引
           "status" : 1
         },
         "indexName" : "userId_1_status_1",
-        "isMultiKey" : false,
         "multiKeyPaths" : {
           "userId" : [ ],
           "status" : [ ]
         },
-        "isUnique" : false,
-        "isSparse" : false,
-        "isPartial" : false,
-        "indexVersion" : 2,
         "direction" : "forward",
         "indexBounds" : {
           "userId" : [
@@ -208,14 +186,9 @@ next 我们分别建立几个索引
             "userId" : 1
           },
           "indexName" : "userId_1",
-          "isMultiKey" : false,
           "multiKeyPaths" : {
             "userId" : [ ]
           },
-          "isUnique" : false,
-          "isSparse" : false,
-          "isPartial" : false,
-          "indexVersion" : 2,
           "direction" : "forward",
           "indexBounds" : {
             "userId" : [
@@ -234,16 +207,12 @@ next 我们分别建立几个索引
 > db.loans.find({ "userId" : "59e022d33f239800129c61c7" }).explain()
 {
   "queryPlanner" : {
-    "plannerVersion" : 1,
     "namespace" : "cashLoan.loans",
-    "indexFilterSet" : false,
     "parsedQuery" : {
       "userId" : {
         "$eq" : "59e022d33f239800129c61c7"
       }
     },
-    "queryHash" : "B1777DBA",
-    "planCacheKey" : "1F09D68E",
     "winningPlan" : {
       "stage" : "FETCH",
       "inputStage" : {
@@ -252,14 +221,9 @@ next 我们分别建立几个索引
           "userId" : 1
         },
         "indexName" : "userId_1",
-        "isMultiKey" : false,
         "multiKeyPaths" : {
           "userId" : [ ]
         },
-        "isUnique" : false,
-        "isSparse" : false,
-        "isPartial" : false,
-        "indexVersion" : 2,
         "direction" : "forward",
         "indexBounds" : {
           "userId" : [
@@ -278,15 +242,10 @@ next 我们分别建立几个索引
             "status" : 1
           },
           "indexName" : "userId_1_status_1",
-          "isMultiKey" : false,
           "multiKeyPaths" : {
             "userId" : [ ],
             "status" : [ ]
           },
-          "isUnique" : false,
-          "isSparse" : false,
-          "isPartial" : false,
-          "indexVersion" : 2,
           "direction" : "forward",
           "indexBounds" : {
             "userId" : [
@@ -309,16 +268,12 @@ next 我们分别建立几个索引
 > db.loans.find({ "status" : "repayed" }).explain()
 {
   "queryPlanner" : {
-    "plannerVersion" : 1,
     "namespace" : "cashLoan.loans",
-    "indexFilterSet" : false,
     "parsedQuery" : {
       "status" : {
         "$eq" : "repayed"
       }
     },
-    "queryHash" : "E6304EB6",
-    "planCacheKey" : "7A94191B",
     "winningPlan" : {
       "stage" : "COLLSCAN",
       "filter" : {
@@ -339,16 +294,12 @@ next 我们分别建立几个索引
 > db.loans.find({ "userId" : "59e022d33f239800129c61c7" }).sort({status:1}).explain()
 {
   "queryPlanner" : {
-    "plannerVersion" : 1,
     "namespace" : "cashLoan.loans",
-    "indexFilterSet" : false,
     "parsedQuery" : {
       "userId" : {
         "$eq" : "59e022d33f239800129c61c7"
       }
     },
-    "queryHash" : "F5ABB1AA",
-    "planCacheKey" : "764CBAA8",
     "winningPlan" : {
       "stage" : "FETCH",
       "inputStage" : {
@@ -358,15 +309,10 @@ next 我们分别建立几个索引
           "status" : 1
         },
         "indexName" : "userId_1_status_1",
-        "isMultiKey" : false,
         "multiKeyPaths" : {
           "userId" : [ ],
           "status" : [ ]
         },
-        "isUnique" : false,
-        "isSparse" : false,
-        "isPartial" : false,
-        "indexVersion" : 2,
         "direction" : "forward",
         "indexBounds" : {
           "userId" : [
@@ -394,14 +340,9 @@ next 我们分别建立几个索引
                 "userId" : 1
               },
               "indexName" : "userId_1",
-              "isMultiKey" : false,
               "multiKeyPaths" : {
                 "userId" : [ ]
               },
-              "isUnique" : false,
-              "isSparse" : false,
-              "isPartial" : false,
-              "indexVersion" : 2,
               "direction" : "forward",
               "indexBounds" : {
                 "userId" : [
@@ -423,9 +364,7 @@ next 我们分别建立几个索引
 > db.loans.find({ "status" : "repayed","userId" : "59e022d33f239800129c61c7", }).explain()
 {
   "queryPlanner" : {
-    "plannerVersion" : 1,
     "namespace" : "cashLoan.loans",
-    "indexFilterSet" : false,
     "parsedQuery" : {
       "$and" : [
         {
@@ -440,8 +379,6 @@ next 我们分别建立几个索引
         }
       ]
     },
-    "queryHash" : "15D5A9A1",
-    "planCacheKey" : "1B1A4861",
     "winningPlan" : {
       "stage" : "FETCH",
       "inputStage" : {
@@ -451,15 +388,10 @@ next 我们分别建立几个索引
           "status" : 1
         },
         "indexName" : "userId_1_status_1",
-        "isMultiKey" : false,
         "multiKeyPaths" : {
           "userId" : [ ],
           "status" : [ ]
         },
-        "isUnique" : false,
-        "isSparse" : false,
-        "isPartial" : false,
-        "indexVersion" : 2,
         "direction" : "forward",
         "indexBounds" : {
           "userId" : [
@@ -485,14 +417,9 @@ next 我们分别建立几个索引
             "userId" : 1
           },
           "indexName" : "userId_1",
-          "isMultiKey" : false,
           "multiKeyPaths" : {
             "userId" : [ ]
           },
-          "isUnique" : false,
-          "isSparse" : false,
-          "isPartial" : false,
-          "indexVersion" : 2,
           "direction" : "forward",
           "indexBounds" : {
             "userId" : [
@@ -516,16 +443,12 @@ next 我们分别建立几个索引
 > db.loans.find({"userId" : "59e022d33f239800129c61c7", }).explain()
 {
   "queryPlanner" : {
-    "plannerVersion" : 1,
     "namespace" : "cashLoan.loans",
-    "indexFilterSet" : false,
     "parsedQuery" : {
       "userId" : {
         "$eq" : "59e022d33f239800129c61c7"
       }
     },
-    "queryHash" : "B1777DBA",
-    "planCacheKey" : "5776AB9C",
     "winningPlan" : {
       "stage" : "FETCH",
       "inputStage" : {
@@ -535,15 +458,10 @@ next 我们分别建立几个索引
           "status" : 1
         },
         "indexName" : "userId_1_status_1",
-        "isMultiKey" : false,
         "multiKeyPaths" : {
           "userId" : [ ],
           "status" : [ ]
         },
-        "isUnique" : false,
-        "isSparse" : false,
-        "isPartial" : false,
-        "indexVersion" : 2,
         "direction" : "forward",
         "indexBounds" : {
           "userId" : [
@@ -567,16 +485,12 @@ next 我们分别建立几个索引
 > db.loans.find({ "status" : "repayed" }).explain()
 {
   "queryPlanner" : {
-    "plannerVersion" : 1,
     "namespace" : "cashLoan.loans",
-    "indexFilterSet" : false,
     "parsedQuery" : {
       "status" : {
         "$eq" : "repayed"
       }
     },
-    "queryHash" : "E6304EB6",
-    "planCacheKey" : "7A94191B",
     "winningPlan" : {
       "stage" : "COLLSCAN",
       "filter" : {
@@ -600,16 +514,12 @@ next 我们分别建立几个索引
 > db.loans.find({ "status" : "repayed" }).sort({userId:1}).explain()
 {
   "queryPlanner" : {
-    "plannerVersion" : 1,
     "namespace" : "cashLoan.loans",
-    "indexFilterSet" : false,
     "parsedQuery" : {
       "status" : {
         "$eq" : "repayed"
       }
     },
-    "queryHash" : "56EA6313",
-    "planCacheKey" : "2CFCDA7F",
     "winningPlan" : {
       "stage" : "FETCH",
       "filter" : {
@@ -624,15 +534,10 @@ next 我们分别建立几个索引
           "status" : 1
         },
         "indexName" : "userId_1_status_1",
-        "isMultiKey" : false,
         "multiKeyPaths" : {
           "userId" : [ ],
           "status" : [ ]
         },
-        "isUnique" : false,
-        "isSparse" : false,
-        "isPartial" : false,
-        "indexVersion" : 2,
         "direction" : "forward",
         "indexBounds" : {
           "userId" : [
@@ -700,16 +605,12 @@ next 我们分别建立几个索引
 > db.loans.find({ "status" : "repayed" }).explain()
 {
   "queryPlanner" : {
-    "plannerVersion" : 1,
     "namespace" : "cashLoan.loans",
-    "indexFilterSet" : false,
     "parsedQuery" : {
       "status" : {
         "$eq" : "repayed"
       }
     },
-    "queryHash" : "E6304EB6",
-    "planCacheKey" : "7A94191B",
     "winningPlan" : {
       "stage" : "FETCH",
       "inputStage" : {
@@ -719,15 +620,10 @@ next 我们分别建立几个索引
           "userId" : 1
         },
         "indexName" : "status_1_userId_1",
-        "isMultiKey" : false,
         "multiKeyPaths" : {
           "status" : [ ],
           "userId" : [ ]
         },
-        "isUnique" : false,
-        "isSparse" : false,
-        "isPartial" : false,
-        "indexVersion" : 2,
         "direction" : "forward",
         "indexBounds" : {
           "status" : [
@@ -743,6 +639,8 @@ next 我们分别建立几个索引
   },
   "ok" : 1
 }
+
+status_1_userId_1 有这个索引的前提，去查 leading fields -- status: xx 会中
 
 > db.loans.getIndexes()
 [
@@ -768,16 +666,12 @@ next 我们分别建立几个索引
 > db.loans.find({"userId" : "59e022d33f239800129c61c7", }).explain()
 {
   "queryPlanner" : {
-    "plannerVersion" : 1,
     "namespace" : "cashLoan.loans",
-    "indexFilterSet" : false,
     "parsedQuery" : {
       "userId" : {
         "$eq" : "59e022d33f239800129c61c7"
       }
     },
-    "queryHash" : "B1777DBA",
-    "planCacheKey" : "5776AB9C",
     "winningPlan" : {
       "stage" : "COLLSCAN",
       "filter" : {
@@ -792,4 +686,7 @@ next 我们分别建立几个索引
   "ok" : 1
 }
 
+status_1_userId_1 有这个索引的前提，去查 非leading fields -- user_id: xx 没中，全表扫描
+
+所以 注意使用上 使用频率上 区分高的/常用的， 应该使用于混合索引，在前面作为leading fields， 
 
