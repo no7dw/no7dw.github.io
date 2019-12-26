@@ -21,7 +21,9 @@
 
 这些可以考虑是读DB 数据到cache (redis or mq), 数据推送到DB同时更新到cache。 -- 目的是为了减少DB的查询，减少DB 查询的量（次数&取的数据量）
 
-注意large skip limit 对DB 是有害的。参考其他文章google 为什么不做很大的分页查询。
+注意large skip limit 对DB 是有害的。参考 其他文章google 为什么不做很大的分页查询。
+[DB large skip bad to use](https://ios.develop-bugs.com/article/19535500/Why+is+MongoDB's+skip()+so+slow+and+bad+to+use%2C+while+MySQL's+LIMIT+is+so+fast%3F)
+[large skip limit 取巧法](https://stackoverflow.com/questions/1243952/how-can-i-speed-up-a-mysql-query-with-a-large-offset-in-the-limit-clause)
 
 还碰到过，为了显示类似阅读量，销售量，每次详情、摘要，都要过来查count ！！！ -- 真的十分大压力。
 典型做法：
