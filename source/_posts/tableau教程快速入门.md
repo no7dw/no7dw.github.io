@@ -14,7 +14,9 @@
 -  想清楚你的需求、定义、dash 大概样子
 -  如果需要多表看，则join 数据, 了解下方的各种join 区别
     -  原理注意：MongoDB 经BI connector unwind后，把数据独立一个表
--  架构介绍
+-  项目组内的架构介绍
+
+    ![2021-01-19-11-09-39](http://img.no1token.com/2021-01-19-11-09-39.png)
     -  tableau client/server <-> (cached)SQL data source (dremio) <-> BI connector  <-> synced MongoDB(NoSQL) @China   <-> MongoShake    <-> MongoDB(Prod Secondary)  @Foreign County
         -  another : tableau client/server <-> (cached)SQL data source (dremio) <-> hive(hadoop)  <-> DB Secondary <-> DB router / Syncer <-> DB (Prod Secondary)
     -  web browser <-> (cached) tableau server <-> (cached)SQL data source (dremio)
@@ -86,3 +88,11 @@ Performance issue：
         -  转化后的sql 执行在dremio—> MongoDB
         -  转化后的sql 执行在dremio—> hive
         ![2020-04-05-16-05-56](https://imgs.no1token.com/2020-04-05-16-05-56.png)
+
+#### tricks
+
+有时由于数据量过大，tableau 分析会有比较慢、数据库有压力，建立增加筛选，从少量数据建立验证后再扩大到大的数据集
+- 从数据的时间维度筛选
+- tableau做数据提取
+- 抽样（id 去尾号是x）的
+- 从业务维度增加筛选条件
