@@ -1,4 +1,4 @@
-# shap explain
+# 模型解释性工具： shap explain 
 按照官网的例子，来个实例解释下，整体见下图
 ![2021-01-15-15-53-47](http://img.no1token.com/2021-01-15-15-53-47.png)
 
